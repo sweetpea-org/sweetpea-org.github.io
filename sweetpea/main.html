@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Experiments &#8212; SweetPea  documentation</title>
+    <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Factors and Levels" href="factors.html" />
+    <link rel="prev" title="SweetPea" href="../index.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="factors.html" title="Factors and Levels"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="SweetPea"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SweetPea  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="experiments">
+<h1>Experiments<a class="headerlink" href="#experiments" title="Permalink to this headline">¶</a></h1>
+<p>Create an experiment description using <a class="reference internal" href="#sweetpea.fully_cross_block" title="sweetpea.fully_cross_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">fully_cross_block()</span></code></a>, then
+generate trials for the experiment using <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> or
+<a class="reference internal" href="#sweetpea.synthesize_trials_nonuniform" title="sweetpea.synthesize_trials_nonuniform"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials_nonuniform()</span></code></a>. Print generated trials using
+<a class="reference internal" href="#sweetpea.print_experiments" title="sweetpea.print_experiments"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_experiments()</span></code></a>.</p>
+<dl class="py function">
+<dt id="sweetpea.fully_cross_block">
+<code class="sig-prename descclassname">sweetpea.</code><code class="sig-name descname">fully_cross_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">design</span></em>, <em class="sig-param"><span class="n">crossing</span></em>, <em class="sig-param"><span class="n">constraints</span></em>, <em class="sig-param"><span class="n">require_complete_crossing</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.fully_cross_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an experiment description as a block of trials.</p>
+<p>The <a class="reference internal" href="#sweetpea.fully_cross_block" title="sweetpea.fully_cross_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">fully_cross_block()</span></code></a> function is the main way of
+describing an expression. The result is an object that be used with
+a function like <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a>.</p>
+<p>The <cite>design</cite> argument lists all of the factors in the design. When
+a sequence of trials is generated, each trial will have one level
+from each factor in <cite>design</cite>.</p>
+<p>The number of trials in each run of the experiment is determined by
+the <cite>crossing</cite> argument. Specifically, the number of trials is the
+product of the number of levels of the factors in <cite>crossing</cite> —
+unless <cite>require_complete_crossing</cite> is set to false, in which case
+<a class="reference internal" href="constraints.html#exclude" title="exclude"><code class="xref py py-func docutils literal notranslate"><span class="pre">exclude()</span></code></a> constraints in <cite>constraints</cite> can reduce the number
+of trials.</p>
+<p>Different trial sequences of the experiment will have different
+combinations of levels in different orders. The factors in
+<cite>crossing</cite> supply an implicit constraint, which is that every
+combination of levels in the cross should appear once. Derive
+factors impose additional implement constraints: only combinations
+of levels that are consistent with derivations can appear as a
+trail. Finally, the <cite>constraints</cite> argument can impose additional
+constraints on the generated trials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>design</strong> (<em>List</em><em>[</em><em>Factor</em><em>]</em>) – the factors that make up the design</p></li>
+<li><p><strong>cross</strong> (<em>List</em><em>[</em><em>Factor</em><em>]</em>) – factors that are fully crossed in the block’s trials,
+which must be a subset of the <cite>design</cite> list</p></li>
+<li><p><strong>constraints</strong> (<em>List</em><em>[</em><em>Constraint</em><em>]</em>) – constraints that every sequence of trials must
+satify; see <a class="reference internal" href="constraints.html#constraints"><span class="std std-ref">Constraints</span></a></p></li>
+<li><p><strong>require_complete_crossing</strong> – dertemines whether every
+combination in <cite>crossing</cite> must
+appear in a block of trials; a
+false value is appropriate if
+combinations are excluded through
+an <a class="reference internal" href="constraints.html#exclude" title="exclude"><code class="xref py py-func docutils literal notranslate"><span class="pre">exclude()</span></code></a> constraint</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a block description</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Block</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sweetpea.synthesize_trials">
+<code class="sig-prename descclassname">sweetpea.</code><code class="sig-name descname">synthesize_trials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block</span></em>, <em class="sig-param"><span class="n">samples</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">sampling_strategy</span><span class="o">=</span><span class="default_value">...</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.synthesize_trials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an experiment description, randomly generates multiple blocks of trials.</p>
+<p>Each block has a number of trials that is determined by the
+experiment’s crossing, and each trial is a combination of levels
+subject to implciit and explicit constraints in the experiment
+description.</p>
+<p><strong>Beware:</strong> Effective uniform sampling is a work in progress, so
+straightforward use of this function might never return a value. To
+get some initial results, try <a class="reference internal" href="#sweetpea.synthesize_trials_nonuniform" title="sweetpea.synthesize_trials_nonuniform"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials_nonuniform()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block</strong> (<em>Block</em>) – the experiment description</p></li>
+<li><p><strong>samples</strong> (<em>int</em>) – the number of blocks of trials to generate; for
+example, 1 sample would correspond to a single run
+of the block with a random ordering of the crossings (that satifies the</p></li>
+<li><p><strong>sampling_strategy</strong> (<em>SamplingStrategy</em>) – how a random set of trials is generated; the default is currently
+<a class="reference internal" href="sampling_strategies.html#sweetpea.sampling_stratgies.unigen.UnigenSamplingStrategy" title="sweetpea.sampling_stratgies.unigen.UnigenSamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnigenSamplingStrategy</span></code></a>, but this is subject to change</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of blocks; each block is a dictionary mapping each
+factor name to a list of levels, where all the lists in a
+dictionary one level for each trial</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[any, list]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sweetpea.synthesize_trials_nonuniform">
+<code class="sig-prename descclassname">sweetpea.</code><code class="sig-name descname">synthesize_trials_nonuniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block</span></em>, <em class="sig-param"><span class="n">samples</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.synthesize_trials_nonuniform" title="Permalink to this definition">¶</a></dt>
+<dd><p>A shorthand for <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> with the samepling
+strategy <a class="reference internal" href="sampling_strategies.html#sweetpea.sampling_stratgies.non_uniform.NonUniformSamplingStrategy" title="sweetpea.sampling_stratgies.non_uniform.NonUniformSamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonUniformSamplingStrategy</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block</strong> (<em>Block</em>) – the experiment description</p></li>
+<li><p><strong>samples</strong> (<em>int</em>) – see <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>see <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[any, list]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sweetpea.print_experiments">
+<code class="sig-prename descclassname">sweetpea.</code><code class="sig-name descname">print_experiments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block</span></em>, <em class="sig-param"><span class="n">trials</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.print_experiments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the trials generated by <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> in a
+human-readable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block</strong> (<em>Block</em>) – the experiment description that was provided to <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
+<li><p><strong>trials</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>any</em><em>,</em><em>list</em><em>]</em><em>]</em>) – trials generated by <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">SweetPea</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="factors.html"
+                        title="next chapter">Factors and Levels</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/sweetpea/main.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="factors.html" title="Factors and Levels"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="SweetPea"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SweetPea  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, SweetPea.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3.
+    </div>
+  </body>
+</html>

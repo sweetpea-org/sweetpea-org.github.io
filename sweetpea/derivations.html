@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Derivations &#8212; SweetPea  documentation</title>
+    <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Constraints" href="constraints.html" />
+    <link rel="prev" title="Factors and Levels" href="factors.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="constraints.html" title="Constraints"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="factors.html" title="Factors and Levels"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SweetPea  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="derivations">
+<span id="id1"></span><h1>Derivations<a class="headerlink" href="#derivations" title="Permalink to this headline">¶</a></h1>
+<p>A <cite>Derivation</cite> is identifies combinations of factor levels that select
+another level that is constructed with <code class="xref py py-func docutils literal notranslate"><span class="pre">derived_level()</span></code>.</p>
+<dl class="py function">
+<dt id="sweetpea.primitives.within_trial">
+<code class="sig-prename descclassname">sweetpea.primitives.</code><code class="sig-name descname">within_trial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">predicate</span></em>, <em class="sig-param"><span class="n">factors</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.primitives.within_trial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes a level that is selected depending on levels
+from other factors, all within the same trial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>, </em><em>..</em><em>]</em><em>, </em><em>bool</em><em>]</em>) – a function that takes as many level
+names as factors in <cite>factors</cite>; the
+function should returns true if the
+combination of levels implies the
+result derivation</p></li>
+<li><p><strong>factors</strong> (<em>List</em><em>(</em><em>Factor</em><em>)</em>) – a list of factors whose levels determine
+whether level with this derivation is
+selected</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Derivation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sweetpea.primitives.transition">
+<code class="sig-prename descclassname">sweetpea.primitives.</code><code class="sig-name descname">transition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">predicate</span></em>, <em class="sig-param"><span class="n">factors</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.primitives.transition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes a level that is selected depending on a
+combination of levels from other factors in the current
+trial and the immediately preceding trial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>list</em><em>, </em><em>..</em><em>]</em><em>, </em><em>bool</em><em>]</em>) – a function that takes as many level
+lists as factors in <cite>factors</cite>; in each
+list, the first element (at index 0)
+is the level value for the previous
+trial, and the second element is the
+level value for the current trial; the
+function should returns true if the
+combination of levels implies the
+result derivation</p></li>
+<li><p><strong>factors</strong> (<em>List</em><em>(</em><em>Factor</em><em>)</em>) – a list of factors whose levels across
+trials determine whether a level with
+the returned derivation is selected</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Derivation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sweetpea.primitives.window">
+<code class="sig-prename descclassname">sweetpea.primitives.</code><code class="sig-name descname">window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">predicate</span></em>, <em class="sig-param"><span class="n">factors</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">stride</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.primitives.window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a level that is selected denpending on a
+combination of levels from other factors in the current
+trial and multiple preceding trials.</p>
+<p>This function generalizes <a class="reference internal" href="#sweetpea.primitives.transition" title="sweetpea.primitives.transition"><code class="xref py py-func docutils literal notranslate"><span class="pre">transition()</span></code></a> to select a
+level depending on multiple trials, and where the
+preceding trials are separated by <cite>stride</cite>-1 intervening
+trials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>list</em><em>, </em><em>..</em><em>]</em><em>, </em><em>bool</em><em>]</em>) – a function that takes as many level
+lists as factors in <cite>factors</cite>; in each
+list, the first element (at index 0)
+is the level value for the earliest of
+<cite>width</cite> trials, and so on; the
+function should returns true if the
+combination of levels implies this
+level</p></li>
+<li><p><strong>factors</strong> (<em>List</em><em>(</em><em>Factor</em><em>)</em>) – a list of factors whose levels across
+trials determine whether a level with
+the returned derivation is selected</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – the number of trials of <cite>factors</cite> to
+consider when selecting the new, derived
+level</p></li>
+<li><p><strong>stride</strong> (<em>int</em>) – one more than the number of trials to
+skip between the trials that are
+considered when selecting the new,
+derived level</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Derivation</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="factors.html"
+                        title="previous chapter">Factors and Levels</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="constraints.html"
+                        title="next chapter">Constraints</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/sweetpea/derivations.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="constraints.html" title="Constraints"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="factors.html" title="Factors and Levels"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SweetPea  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, SweetPea.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3.
+    </div>
+  </body>
+</html>

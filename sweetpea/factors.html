@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Factors and Levels &#8212; SweetPea  documentation</title>
+    <link rel="stylesheet" href="../_static/overrides.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Derivations" href="derivations.html" />
+    <link rel="prev" title="Experiments" href="main.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="derivations.html" title="Derivations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="main.html" title="Experiments"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SweetPea  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="factors-and-levels">
+<h1>Factors and Levels<a class="headerlink" href="#factors-and-levels" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="sweetpea.primitives.factor">
+<code class="sig-prename descclassname">sweetpea.primitives.</code><code class="sig-name descname">factor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">levels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.primitives.factor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a plain factor for use in an experiment design.</p>
+<p>The name of a factor can be any printable value. The
+levels of a factor can printable values that are used as
+the level names, or the levels can be derived levels
+created by <a class="reference internal" href="#sweetpea.primitives.derived_level" title="sweetpea.primitives.derived_level"><code class="xref py py-func docutils literal notranslate"><span class="pre">derived_level()</span></code></a> (which must be
+distinct, mutually exclusive, and cover all cases). The
+<cite>levels</cite> list must either contain all derived levels or
+contain all printable values. A <em>derived factor</em> is one
+whose levels are derived levels, and that creates an
+implicit constraint on the way the levels appear in an
+experiment; see <a class="reference internal" href="main.html#sweetpea.fully_cross_block" title="sweetpea.fully_cross_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">fully_cross_block()</span></code></a>.</p>
+<p>If a printable value occurs multiple times in <cite>levels</cite>,
+each instance is a a distinct level. Since the levels
+have the same name, using the level name in contraints
+or derving other factors will effectively refer to all
+of the levels with the same name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – the factor’s name</p></li>
+<li><p><strong>levels</strong> (<em>list</em>) – the factor’s levels</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a factor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Factor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sweetpea.primitives.derived_level">
+<code class="sig-prename descclassname">sweetpea.primitives.</code><code class="sig-name descname">derived_level</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">derivation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.primitives.derived_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a derived level, which depends on the levels of
+other factors in a design.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Para name</dt>
+<dd class="field-odd"><p>the level’s name, which can be any printable
+value</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>derivation</strong> (<em>Derivation</em>) – a condition on other factors’ levels; see
+<a class="reference internal" href="derivations.html#derivations"><span class="std std-ref">Derivations</span></a>.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a derived level</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="main.html"
+                        title="previous chapter">Experiments</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="derivations.html"
+                        title="next chapter">Derivations</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/sweetpea/factors.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="derivations.html" title="Derivations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="main.html" title="Experiments"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SweetPea  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, SweetPea.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3.
+    </div>
+  </body>
+</html>
