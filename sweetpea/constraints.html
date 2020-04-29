@@ -58,10 +58,11 @@ consecutive trials with the same level among those in
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>k</strong> (<em>int</em>) – the maximum number of consecutive repetitions
 to allow</p></li>
-<li><p><strong>levels</strong> (<em>Union</em><em>[</em><em>Factor</em><em>, </em><em>Tuple</em><em>(</em><em>Factor</em><em>, </em><em>list</em><em>)</em><em>]</em>) – either a factor or a tuple of a factor
-and level names within the factor;
+<li><p><strong>levels</strong> (<em>Union</em><em>[</em><em>Factor</em><em>, </em><em>Tuple</em><em>(</em><em>Factor</em><em>, </em><em>Any</em><em>)</em><em>]</em>) – either a factor or a tuple of a factor
+and a level name within the factor;
 specifying just a factor is the same as
-listing all of the factor’s levels</p></li>
+listing all of the factor’s levels as
+separate constraints</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -87,10 +88,11 @@ level.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>k</strong> (<em>int</em>) – the number of repetitions to require</p></li>
-<li><p><strong>levels</strong> (<em>Union</em><em>[</em><em>Factor</em><em>, </em><em>Tuple</em><em>(</em><em>Factor</em><em>, </em><em>list</em><em>)</em><em>]</em>) – either a factor or a tuple of a factor
+<li><p><strong>levels</strong> (<em>Union</em><em>[</em><em>Factor</em><em>, </em><em>Tuple</em><em>(</em><em>Factor</em><em>, </em><em>Any</em><em>)</em><em>]</em>) – either a factor or a tuple of a factor
 and level names within the factor;
 specifying just a factor is the same as
-listing all of the factor’s levels</p></li>
+listing all of the factor’s levels as
+separate constraints</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -101,14 +103,14 @@ listing all of the factor’s levels</p></li>
 
 <dl class="py function">
 <dt id="exclude">
-<code class="sig-name descname">exclude</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">factor</span></em>, <em class="sig-param"><span class="n">levels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#exclude" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">exclude</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">factor</span></em>, <em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="headerlink" href="#exclude" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constrains an experiment to disallow the specified
-levels.</p>
+level.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>factor</strong> (<em>Factor</em>) – the factor whose levels are named by <cite>levels</cite></p></li>
-<li><p><strong>levels</strong> (<em>list</em>) – a list of level names among the levels in <cite>factor</cite></p></li>
+<li><p><strong>levels</strong> – a level name among the levels in <cite>factor</cite></p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
