@@ -54,7 +54,8 @@ generate trials for the experiment using <a class="reference internal" href="#sw
 <dl class="py function">
 <dt id="sweetpea.fully_cross_block">
 <code class="sig-prename descclassname">sweetpea.</code><code class="sig-name descname">fully_cross_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">design</span></em>, <em class="sig-param"><span class="n">crossing</span></em>, <em class="sig-param"><span class="n">constraints</span></em>, <em class="sig-param"><span class="n">require_complete_crossing</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.fully_cross_block" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates an experiment description as a block of trials.</p>
+<dd><p>Creates an experiment description as a block of trials based on a
+single crossing.</p>
 <p>The <a class="reference internal" href="#sweetpea.fully_cross_block" title="sweetpea.fully_cross_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">fully_cross_block()</span></code></a> function is the main way of
 describing an expression. The result is an object that be used with
 a function like <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a>.</p>
@@ -79,16 +80,53 @@ constraints on the generated trials.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>design</strong> (<em>List</em><em>[</em><em>Factor</em><em>]</em>) – the factors that make up the design</p></li>
-<li><p><strong>cross</strong> (<em>List</em><em>[</em><em>Factor</em><em>]</em>) – factors that are fully crossed in the block’s trials,
+<li><p><strong>crossing</strong> (<em>List</em><em>[</em><em>Factor</em><em>]</em>) – factors that are fully crossed in the block’s trials,
 which must be a subset of the <cite>design</cite> list</p></li>
 <li><p><strong>constraints</strong> (<em>List</em><em>[</em><em>Constraint</em><em>]</em>) – constraints that every sequence of trials must
 satify; see <a class="reference internal" href="constraints.html#constraints"><span class="std std-ref">Constraints</span></a></p></li>
-<li><p><strong>require_complete_crossing</strong> – dertemines whether every
+<li><p><strong>require_complete_crossing</strong> – dertermines whether every
 combination in <cite>crossing</cite> must
 appear in a block of trials; a
 false value is appropriate if
 combinations are excluded through
 an <a class="reference internal" href="constraints.html#exclude" title="exclude"><code class="xref py py-func docutils literal notranslate"><span class="pre">exclude()</span></code></a> constraint</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a block description</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Block</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sweetpea.multiple_cross_block">
+<code class="sig-prename descclassname">sweetpea.</code><code class="sig-name descname">multiple_cross_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">design</span></em>, <em class="sig-param"><span class="n">crossings</span></em>, <em class="sig-param"><span class="n">constraints</span></em>, <em class="sig-param"><span class="n">require_complete_crossing</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.multiple_cross_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an experiment description as a block of trials based on
+multiple crossings.</p>
+<p>The <a class="reference internal" href="#sweetpea.multiple_cross_block" title="sweetpea.multiple_cross_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">multiple_cross_block()</span></code></a> function is like
+<a class="reference internal" href="#sweetpea.fully_cross_block" title="sweetpea.fully_cross_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">fully_cross_block()</span></code></a>, but it accepts multiple crossings in
+<cite>crossings</cite>, instead of a single crossing.</p>
+<p>The number of trials in each run of the experiment is determined by
+the <em>maximum</em> of number that would be determined by an individual
+crossing in <cite>crossings</cite>.</p>
+<p>Every combination of levels in each individual crossing in
+<cite>crossings</cite> appears at least once. Different crossings in
+<cite>crossings</cite> can refer to the same factors, which creates
+constraints on how factor levels are chosen across crossings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>design</strong> (<em>List</em><em>[</em><em>Factor</em><em>]</em>) – the factors that make up the design</p></li>
+<li><p><strong>crossings</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>Factor</em><em>]</em><em>]</em>) – a list of crossings, where each crossing is a
+list of factors that are fully crossed in the
+block’s trials; the factors in each crossing must
+be a subset of the <cite>design</cite> list</p></li>
+<li><p><strong>constraints</strong> (<em>List</em><em>[</em><em>Constraint</em><em>]</em>) – constraints that every sequence of trials must
+satify; see <a class="reference internal" href="constraints.html#constraints"><span class="std std-ref">Constraints</span></a></p></li>
+<li><p><strong>require_complete_crossing</strong> – same as for <a class="reference internal" href="#sweetpea.multiple_cross_block" title="sweetpea.multiple_cross_block"><code class="xref py py-func docutils literal notranslate"><span class="pre">multiple_cross_block()</span></code></a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -136,8 +174,33 @@ dictionary one level for each trial</p>
 <dl class="py function">
 <dt id="sweetpea.synthesize_trials_nonuniform">
 <code class="sig-prename descclassname">sweetpea.</code><code class="sig-name descname">synthesize_trials_nonuniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block</span></em>, <em class="sig-param"><span class="n">samples</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.synthesize_trials_nonuniform" title="Permalink to this definition">¶</a></dt>
-<dd><p>A shorthand for <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> with the samepling
-strategy <a class="reference internal" href="sampling_strategies.html#sweetpea.sampling_stratgies.non_uniform.NonUniformSamplingStrategy" title="sweetpea.sampling_stratgies.non_uniform.NonUniformSamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonUniformSamplingStrategy</span></code></a>.</p>
+<dd><p>A shorthand for <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> with the sampling
+strategy <a class="reference internal" href="sampling_strategies.html#sweetpea.sampling_stratgies.non_uniform.NonUniformSamplingStrategy" title="sweetpea.sampling_stratgies.non_uniform.NonUniformSamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonUniformSamplingStrategy</span></code></a> if the block has
+contraints and sampling strategy <a class="reference internal" href="sampling_strategies.html#sweetpea.sampling_stratgies.uniform_combinatoric.UniformCombinatoricSamplingStrategy" title="sweetpea.sampling_stratgies.uniform_combinatoric.UniformCombinatoricSamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">UniformCombinatoricSamplingStrategy</span></code></a>
+if there are no constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block</strong> (<em>Block</em>) – the experiment description</p></li>
+<li><p><strong>samples</strong> (<em>int</em>) – see <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>see <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Dict[any, list]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sweetpea.synthesize_trials_uniform">
+<code class="sig-prename descclassname">sweetpea.</code><code class="sig-name descname">synthesize_trials_uniform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">block</span></em>, <em class="sig-param"><span class="n">samples</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.synthesize_trials_uniform" title="Permalink to this definition">¶</a></dt>
+<dd><p>A shorthand for <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> with the sampling
+strategy <a class="reference internal" href="sampling_strategies.html#sweetpea.sampling_stratgies.unigen.UnigenSamplingStrategy" title="sweetpea.sampling_stratgies.unigen.UnigenSamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnigenSamplingStrategy</span></code></a> if the block has
+contraints and sampling strategy <a class="reference internal" href="sampling_strategies.html#sweetpea.sampling_stratgies.uniform_combinatoric.UniformCombinatoricSamplingStrategy" title="sweetpea.sampling_stratgies.uniform_combinatoric.UniformCombinatoricSamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">UniformCombinatoricSamplingStrategy</span></code></a>
+if there are no constraints.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">

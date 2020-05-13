@@ -102,6 +102,30 @@ separate constraints</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt id="exactly_k">
+<code class="sig-name descname">exactly_k</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">levels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#exactly_k" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constrains an experiment to allow levels among those
+specified in <cite>levels</cite> only when they appear as part of a
+sequence of exactly <cite>k</cite> trials with the same level in
+the experiment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>int</em>) – the number of repetitions to require</p></li>
+<li><p><strong>levels</strong> (<em>Union</em><em>[</em><em>Factor</em><em>, </em><em>Tuple</em><em>(</em><em>Factor</em><em>, </em><em>Any</em><em>)</em><em>]</em>) – either a factor or a tuple of a factor
+and level names within the factor;
+specifying just a factor is the same as
+listing all of the factor’s levels as
+separate constraints</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Constraint</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="exclude">
 <code class="sig-name descname">exclude</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">factor</span></em>, <em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="headerlink" href="#exclude" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constrains an experiment to disallow the specified
