@@ -13,6 +13,7 @@ Submodules
    :maxdepth: 4
 
    sweetpea.sampling_strategies.base
+   sweetpea.sampling_strategies.cmsgen
    sweetpea.sampling_strategies.guided
    sweetpea.sampling_strategies.non_uniform
    sweetpea.sampling_strategies.uniform_combinatoric

@@ -1,0 +1,7 @@
+sweetpea.sampling\_strategies.cmsgen module
+===========================================
+
+.. automodule:: sweetpea.sampling_strategies.cmsgen
+   :members:
+   :undoc-members:
+   :show-inheritance:
