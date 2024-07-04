@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experiments &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> SweetPea
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SweetPea
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -115,11 +121,64 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">SweetPea API</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Experiments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="factors.html">Factors and Levels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="derivations.html">Derivations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Block"><code class="docutils literal notranslate"><span class="pre">sweetpea.Block</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="factors.html">Factors and Levels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.Factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.get_level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.get_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.levels"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.levels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.Level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Level.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Level.factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.factor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="derivations.html">Derivations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Constraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.Constraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Exclude"><code class="docutils literal notranslate"><span class="pre">sweetpea.Exclude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Pin"><code class="docutils literal notranslate"><span class="pre">sweetpea.Pin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.MinimumTrials"><code class="docutils literal notranslate"><span class="pre">sweetpea.MinimumTrials</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtMostKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtMostKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.Gen"><code class="docutils literal notranslate"><span class="pre">sweetpea.Gen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.UniformGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.UniGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.CMSGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.CMSGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -137,9 +196,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../api.html">SweetPea API</a> &raquo;</li>
-      <li>Experiments</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">SweetPea API</a></li>
+      <li class="breadcrumb-item active">Experiments</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/main.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -150,21 +209,21 @@
            <div itemprop="articleBody">
              
   <section id="experiments">
-<h1>Experiments<a class="headerlink" href="#experiments" title="Permalink to this heading"></a></h1>
+<h1>Experiments<a class="headerlink" href="#experiments" title="Link to this heading"></a></h1>
 <p>Create an experiment description using <a class="reference internal" href="#sweetpea.CrossBlock" title="sweetpea.CrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossBlock</span></code></a> or
 <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a>, then generate trials for the experiment
 using <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a>. Print generated trials using
 <a class="reference internal" href="#sweetpea.print_experiments" title="sweetpea.print_experiments"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_experiments()</span></code></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.Block">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Block</span></span><a class="headerlink" href="#sweetpea.Block" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Block</span></span><a class="headerlink" href="#sweetpea.Block" title="Link to this definition"></a></dt>
 <dd><p>Abstract class representing an experiment description, which can be
 turned into a sequence of trials with <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.CrossBlock">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">CrossBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_complete_crossing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.CrossBlock" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">CrossBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_complete_crossing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.CrossBlock" title="Link to this definition"></a></dt>
 <dd><p>Creates an experiment description based on a set of factors and a
 subset them that are <em>crossed</em>.</p>
 <p>The <a class="reference internal" href="#sweetpea.CrossBlock" title="sweetpea.CrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossBlock</span></code></a> class is the main way of describing an
@@ -220,7 +279,7 @@ then it’s as if the minimum trial count were rounded up, and
 then trials are discarded at the end.</p></li>
 </ul>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>design</strong> (<em>List</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – the factors that make up the design</p></li>
 <li><p><strong>crossing</strong> (<em>List</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – factors that are fully crossed in the block’s trials,
@@ -235,10 +294,10 @@ combinations are excluded through
 an <a class="reference internal" href="constraints.html#sweetpea.Exclude" title="sweetpea.Exclude"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exclude</span></code></a> constraint</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a block description</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block">Block</a></p>
 </dd>
 </dl>
@@ -246,7 +305,7 @@ an <a class="reference internal" href="constraints.html#sweetpea.Exclude" title=
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.MultiCrossBlock">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">MultiCrossBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_complete_crossing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.MultiCrossBlock" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">MultiCrossBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_complete_crossing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.MultiCrossBlock" title="Link to this definition"></a></dt>
 <dd><p>Creates an experiment description as a block of trials based on
 multiple crossings.</p>
 <p>The <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a> class generalizes
@@ -265,7 +324,7 @@ same time, different crossings in <cite>crossings</cite> can refer to the same
 factors, which creates constraints on how factor levels are chosen
 across crossings in a given trial.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>design</strong> (<em>List</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – the factors that make up the design</p></li>
 <li><p><strong>crossings</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em><em>]</em>) – a list of crossings, where each crossing is a
@@ -277,10 +336,10 @@ satify; see <a class="reference internal" href="constraints.html#constraints"><s
 <li><p><strong>require_complete_crossing</strong> – same as for <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a block description</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block">Block</a></p>
 </dd>
 </dl>
@@ -288,7 +347,7 @@ satify; see <a class="reference internal" href="constraints.html#constraints"><s
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.Repeat">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Repeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Repeat" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Repeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Repeat" title="Link to this definition"></a></dt>
 <dd><p>Repeats the crossings of a given <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a> (or
 <a class="reference internal" href="#sweetpea.CrossBlock" title="sweetpea.CrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossBlock</span></code></a>) enough times to satisfy a minimum trial count
 specified in <cite>constraints</cite>. Unlike increasing the minimum trial
@@ -315,17 +374,17 @@ of each repetition.</p>
 generating trials from the repetition will be the same as
 generating them from <cite>block</cite> directly.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block</strong> (<a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><em>MultiCrossBlock</em></a>) – the block to repeat</p></li>
 <li><p><strong>constraints</strong> (<em>List</em><em>[</em><a class="reference internal" href="constraints.html#sweetpea.Constraint" title="sweetpea.Constraint"><em>Constraint</em></a><em>]</em>) – a list that cannot include
 <a class="reference internal" href="constraints.html#sweetpea.Exclude" title="sweetpea.Exclude"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exclude</span></code></a> constraints</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a block description</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block">Block</a></p>
 </dd>
 </dl>
@@ -333,7 +392,7 @@ generating them from <cite>block</cite> directly.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sweetpea.synthesize_trials">
-<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">synthesize_trials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">IterateGen</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.synthesize_trials" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">synthesize_trials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">IterateGen</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.synthesize_trials" title="Link to this definition"></a></dt>
 <dd><p>Given an experiment description, generates multiple blocks of trials.</p>
 <p>Each block has a number of trials that is determined by the
 experiment’s crossing, and each trial is a combination of levels
@@ -348,7 +407,7 @@ guarantee of uniform sampling. The default is chosen to produce
 a result as quickly as possible for the broadest range of
 designs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block</strong> (<a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block"><em>Block</em></a>) – the experiment description</p></li>
 <li><p><strong>samples</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the number of sequences of trials to generate; for
@@ -359,12 +418,12 @@ of the experiment with a random ordering of the trials
 <a class="reference internal" href="sampling_strategies.html#sweetpea.IterateGen" title="sweetpea.IterateGen"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterateGen</span></code></a>, but this is subject to change</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a list of blocks; each block is a dictionary mapping each
 factor name to a list of levels, where all of the lists in the
 dictionary have one item for each trial</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[Dict[<a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)">str</a>, <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#list" title="(in Python v3.7)">list</a>]]</p>
 </dd>
 </dl>
@@ -372,11 +431,11 @@ dictionary have one item for each trial</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sweetpea.print_experiments">
-<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">print_experiments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.print_experiments" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">print_experiments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.print_experiments" title="Link to this definition"></a></dt>
 <dd><p>Prints the trials generated by <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> in a
 human-readable format.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block</strong> (<a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block"><em>Block</em></a>) – the experiment description that was provided to <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
 <li><p><strong>experiments</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>]</em><em>]</em>) – sequences generated by <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
@@ -387,7 +446,7 @@ human-readable format.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sweetpea.tabulate_experiments">
-<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">tabulate_experiments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trials=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.tabulate_experiments" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">tabulate_experiments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trials=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.tabulate_experiments" title="Link to this definition"></a></dt>
 <dd><p>Tabulates the number of times each crossing combination occurs in
 each sequence of <cite>experiments</cite>, and prints a summary in a
 human-readable format. This function might be used to check that
@@ -401,7 +460,7 @@ multi-crossing block produced by <a class="reference internal" href="#sweetpea.M
 provided, is lists trials that should be tabulated, and other
 trials are ignored. Trial indices in <cite>trials</cite> count from 0.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block</strong> (<a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block"><em>Block</em></a>) – the experiment description that was provided to <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
 <li><p><strong>experiments</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>]</em><em>]</em>) – sequences generated by <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
@@ -414,12 +473,12 @@ trials are ignored. Trial indices in <cite>trials</cite> count from 0.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sweetpea.save_experiments_csv">
-<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">save_experiments_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_prefix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.save_experiments_csv" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">save_experiments_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_prefix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.save_experiments_csv" title="Link to this definition"></a></dt>
 <dd><p>Saves each sequence of <cite>experiments</cite> to a file whose name is
 <cite>file_prefix</cite> followed by an underscore, a number counting from
 <cite>0</cite>, and “.csv”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block</strong> (<a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block"><em>Block</em></a>) – the experiment description that was provided to <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
 <li><p><strong>experiments</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>]</em><em>]</em>) – sequences generated by <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
@@ -431,22 +490,22 @@ trials are ignored. Trial indices in <cite>trials</cite> count from 0.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sweetpea.experiments_to_dicts">
-<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">experiments_to_dicts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.experiments_to_dicts" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">experiments_to_dicts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.experiments_to_dicts" title="Link to this definition"></a></dt>
 <dd><p>Converts a result from <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a>, where each
 generated sequence is represented as a dictionary of lists, so that
 each generated sequence is instead represented as a list of dictionaries.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block</strong> (<a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block"><em>Block</em></a>) – the experiment description that was provided to <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
 <li><p><strong>experiments</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>]</em><em>]</em>) – sequences generated by <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a list of lists of dictionaries, where each dictionary maps each
 factor name to the string name for the levels of the trial</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[List[Dict[<a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)">str</a>, Any]]]</p>
 </dd>
 </dl>
@@ -454,22 +513,22 @@ factor name to the string name for the levels of the trial</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sweetpea.experiments_to_tuples">
-<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">experiments_to_tuples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.experiments_to_tuples" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">experiments_to_tuples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiments</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.experiments_to_tuples" title="Link to this definition"></a></dt>
 <dd><p>Converts a result from <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a>, where each
 generated sequence is represented as a dictionary of lists, so that
 each generated sequence is instead represented as a list of tuples.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block</strong> (<a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block"><em>Block</em></a>) – the experiment description that was provided to <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
 <li><p><strong>experiments</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><em>]</em><em>]</em>) – sequences generated by <a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a list of lists of tuples, where each tuple contains the string
 names of levels selected for one trial</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List[List[<a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#tuple" title="(in Python v3.7)">tuple</a>]]</p>
 </dd>
 </dl>

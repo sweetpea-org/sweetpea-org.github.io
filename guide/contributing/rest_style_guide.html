@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>reStructuredText Style Guide &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> SweetPea
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SweetPea
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -115,11 +121,64 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">SweetPea API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../api/main.html">Experiments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/factors.html">Factors and Levels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/derivations.html">Derivations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/constraints.html">Constraints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/sampling_strategies.html">Sampling Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/main.html">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.Block"><code class="docutils literal notranslate"><span class="pre">sweetpea.Block</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/factors.html">Factors and Levels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.Factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Factor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Factor.get_level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.get_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Factor.levels"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.levels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.Level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Level.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Level.factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.factor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/derivations.html">Derivations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/derivations.html#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/constraints.html">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.Constraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.Constraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.Exclude"><code class="docutils literal notranslate"><span class="pre">sweetpea.Exclude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.Pin"><code class="docutils literal notranslate"><span class="pre">sweetpea.Pin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.MinimumTrials"><code class="docutils literal notranslate"><span class="pre">sweetpea.MinimumTrials</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.AtMostKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtMostKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sampling_strategies.html">Sampling Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.Gen"><code class="docutils literal notranslate"><span class="pre">sweetpea.Gen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.UniformGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.UniGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.CMSGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.CMSGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -137,10 +196,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../guide.html">SweetPea Guide</a> &raquo;</li>
-          <li><a href="../contributing.html">Contributing to SweetPea</a> &raquo;</li>
-      <li>reStructuredText Style Guide</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../guide.html">SweetPea Guide</a></li>
+          <li class="breadcrumb-item"><a href="../contributing.html">Contributing to SweetPea</a></li>
+      <li class="breadcrumb-item active">reStructuredText Style Guide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/guide/contributing/rest_style_guide.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -151,19 +210,19 @@
            <div itemprop="articleBody">
              
   <section id="restructuredtext-style-guide">
-<span id="rest-style-guide"></span><h1>reStructuredText Style Guide<a class="headerlink" href="#restructuredtext-style-guide" title="Permalink to this heading"></a></h1>
+<span id="rest-style-guide"></span><h1>reStructuredText Style Guide<a class="headerlink" href="#restructuredtext-style-guide" title="Link to this heading"></a></h1>
 <p>SweetPea’s documentation is written in a consistent style of reStructredText
 (reST). This helps with managing contributions and makes it easier to read in
 code. This section details the specifics of SweetPea’s reST style.</p>
 <section id="general">
-<h2>General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h2>
+<h2>General<a class="headerlink" href="#general" title="Link to this heading"></a></h2>
 <p>We restrict reST documentation to not go past the 80th character of a line,
 except where absolutely necessary due to potential formatting errors. (For
 example, a long hyperlink may extend past the 80th column, but additional text
 within the same sentence as that hyperlink should be put on separate lines to
 accommodate this rule to the greatest extent possible.)</p>
 <section id="roles">
-<h3>Roles<a class="headerlink" href="#roles" title="Permalink to this heading"></a></h3>
+<h3>Roles<a class="headerlink" href="#roles" title="Link to this heading"></a></h3>
 <p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html">Roles</a> (reST
 items surrounded by colons, like <code class="docutils literal notranslate"><span class="pre">:role:</span></code>) are each preceded by one empty
 line.</p>
@@ -173,7 +232,7 @@ as the <code class="docutils literal notranslate"><span class="pre">:returns:</s
 body text is set on the immediately following line, indented by 4 spaces.</p>
 </section>
 <section id="directives">
-<h3>Directives<a class="headerlink" href="#directives" title="Permalink to this heading"></a></h3>
+<h3>Directives<a class="headerlink" href="#directives" title="Link to this heading"></a></h3>
 <p>Like roles, <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html">directives</a>
 (reST items preceded by double-dots and followed by double-colons, like <code class="docutils literal notranslate"><span class="pre">..</span>
 <span class="pre">directive::</span></code>) are each preceded by one empty line.</p>
@@ -181,18 +240,18 @@ body text is set on the immediately following line, indented by 4 spaces.</p>
 the next line after that. Content text is indented by 4 spaces.</p>
 </section>
 <section id="commonly-used-roles-and-directives">
-<h3>Commonly Used Roles and Directives<a class="headerlink" href="#commonly-used-roles-and-directives" title="Permalink to this heading"></a></h3>
+<h3>Commonly Used Roles and Directives<a class="headerlink" href="#commonly-used-roles-and-directives" title="Link to this heading"></a></h3>
 <p>You may use any roles or directives you find useful, but there are a number of
 them that we already make frequent use of:</p>
 <section id="id3">
-<h4>Roles<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<h4>Roles<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">:math:`&lt;LaTeX</span> <span class="pre">math</span> <span class="pre">code&gt;`</span></code></dt><dd><p>Renders the given <code class="docutils literal notranslate"><span class="pre">&lt;LaTeX</span> <span class="pre">math</span> <span class="pre">code&gt;</span></code>. See the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/math.html">Sphinx documentation on
 how to do math</a>.</p>
 </dd>
 </dl>
 <section id="linking-roles">
-<h5>Linking Roles<a class="headerlink" href="#linking-roles" title="Permalink to this heading"></a></h5>
+<h5>Linking Roles<a class="headerlink" href="#linking-roles" title="Link to this heading"></a></h5>
 <p>There are a number of roles that form hyperlinks. These can link within the same
 documentation, to other documentation (via InterSphinx), or to external
 websites. All of these roles can be used in two ways:</p>
@@ -233,7 +292,7 @@ the <code class="docutils literal notranslate"><span class="pre">&#64;property</
 </dl>
 </section>
 <section id="in-function-and-class-docstrings">
-<h5>In Function and Class Docstrings<a class="headerlink" href="#in-function-and-class-docstrings" title="Permalink to this heading"></a></h5>
+<h5>In Function and Class Docstrings<a class="headerlink" href="#in-function-and-class-docstrings" title="Link to this heading"></a></h5>
 <p>These are roles that are only used inside docstrings for functions and classes.</p>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">:param</span> <span class="pre">&lt;param_name&gt;:</span></code></dt><dd><p>Documents parameter <code class="docutils literal notranslate"><span class="pre">&lt;param_name&gt;</span></code> of the function being documented. This
@@ -263,7 +322,7 @@ same conventions as <code class="docutils literal notranslate"><span class="pre"
 </section>
 </section>
 <section id="id4">
-<h4>Directives<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
+<h4>Directives<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">code-block::</span> <span class="pre">&lt;optional_language_specification&gt;</span></code></dt><dd><p>Begins a literal code block. If a language is specified, syntax highlighting
 will be used. (We only use <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">rest</span></code> so far.)</p>
@@ -278,7 +337,7 @@ page that collects other pages of documentation, such as
 </dd>
 </dl>
 <section id="in-the-python-code">
-<h5>In the Python Code<a class="headerlink" href="#in-the-python-code" title="Permalink to this heading"></a></h5>
+<h5>In the Python Code<a class="headerlink" href="#in-the-python-code" title="Link to this heading"></a></h5>
 <p>There is generally not need for use of directives within the Python docstrings,
 but we do make regular use of admonitions. Admonitions are directives which get
 styled as a colored box of text and are useful for making warnings or pointing
@@ -325,12 +384,12 @@ use in the Python code.</p>
 </section>
 </section>
 <section id="docstrings">
-<h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this heading"></a></h2>
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Link to this heading"></a></h2>
 <p>Python docstrings are triple-quoted strings that are inserted immediately
 <em>after</em> the construct they document. For example, if we wanted to document a
 function <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Type1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="n">Type2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReturnType</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Returns the result of fooing ``arg1`` with ``arg2``.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the result of fooing ``arg1`` with ``arg2``.</span>
 
 <span class="sd">    :param arg1:</span>
 <span class="sd">        A good argument.</span>
@@ -348,12 +407,12 @@ function <code class="docutils literal notranslate"><span class="pre">foo</span>
 <p>Even in docstrings, we restrict reST code to go no further than the 80th column
 in a line.</p>
 <section id="functions">
-<span id="rest-style-guide-functions"></span><h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h3>
+<span id="rest-style-guide-functions"></span><h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
 <p>Function docstrings should be written in the present tense with active voice,
 giving the function agency. For example, a function that adds two numbers might
 be documented as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">lhs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Adds ``lhs`` to ``rhs`` and returns the result.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds ``lhs`` to ``rhs`` and returns the result.</span>
 
 <span class="sd">    .. note::</span>
 
@@ -372,7 +431,7 @@ be documented as:</p>
 </pre></div>
 </div>
 <section id="style-notes">
-<h4>Style Notes<a class="headerlink" href="#style-notes" title="Permalink to this heading"></a></h4>
+<h4>Style Notes<a class="headerlink" href="#style-notes" title="Link to this heading"></a></h4>
 <ul class="simple">
 <li><p>We use the double quotation mark <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p></li>
 <li><p>The documentation begins on the same line as the initial triple quote <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>.</p></li>
@@ -389,7 +448,7 @@ as part of the function body.)</p></li>
 </ul>
 </section>
 <section id="content-notes">
-<h4>Content Notes<a class="headerlink" href="#content-notes" title="Permalink to this heading"></a></h4>
+<h4>Content Notes<a class="headerlink" href="#content-notes" title="Link to this heading"></a></h4>
 <ul class="simple">
 <li><p>The description of the function should be thorough enough to fully explain the
 function’s purpose and how to use it, but it should not degrade into examples
@@ -406,7 +465,7 @@ parameters.</p></li>
 </section>
 </section>
 <section id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h3>
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h3>
 <p>Class docstrings begin just after the class definition begins, and should
 describe what an abstract instance of that class is for. Note that the rules for
 placing the closing triple quote are the same as those for <a class="reference internal" href="#rest-style-guide-functions"><span class="std std-ref">functions</span></a>.</p>
@@ -418,7 +477,7 @@ document all of the parameters to the initialization process, including
 <p>Unlike docstrings for functions, class docstrings should <em>always</em> be followed by
 an empty line.</p>
 <section id="attributes">
-<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading"></a></h4>
+<h4>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h4>
 <p>In most cases, <em>all</em> public attributes (fields and methods) should be
 documented.</p>
 <p>Fields cannot be documented with docstrings, and instead are documented with a
@@ -428,7 +487,7 @@ modified form of the Python line comment using <code class="docutils literal not
 
 <span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">FieldExample</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An example for documenting a field.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An example for documenting a field.</span>
 
 <span class="sd">    :param field:</span>
 <span class="sd">        The field we&#39;re making an example of.</span>
@@ -451,7 +510,7 @@ example:</p>
 
 <span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;The parent class in this example.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The parent class in this example.</span>
 
 <span class="sd">    :param field:</span>
 <span class="sd">        The field we&#39;re making an example of.</span>
@@ -464,7 +523,7 @@ example:</p>
 
 <span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The child class in this example. Note that the :attr:`.field` field</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The child class in this example. Note that the :attr:`.field` field</span>
 <span class="sd">    does not have a ``#:`` reST comment accompanying it.</span>
 
 <span class="sd">    :param field:</span>
@@ -484,7 +543,7 @@ non-public fields.</p>
 </section>
 </section>
 <section id="modules">
-<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this heading"></a></h3>
+<h3>Modules<a class="headerlink" href="#modules" title="Link to this heading"></a></h3>
 <p>Modules should also have docstrings that explain the purpose and use of the
 module. Module docstrings are written beginning on the very first line of the
 module. All modules should have a module docstring.</p>

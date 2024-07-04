@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Factors and Levels &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> SweetPea
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SweetPea
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -115,11 +121,64 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">SweetPea API</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="main.html">Experiments</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Factors and Levels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="derivations.html">Derivations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.Block"><code class="docutils literal notranslate"><span class="pre">sweetpea.Block</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Factors and Levels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sweetpea.Factor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sweetpea.Factor.get_level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.get_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sweetpea.Factor.levels"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.levels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sweetpea.Level.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sweetpea.Level.factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.factor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="derivations.html">Derivations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Constraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.Constraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Exclude"><code class="docutils literal notranslate"><span class="pre">sweetpea.Exclude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Pin"><code class="docutils literal notranslate"><span class="pre">sweetpea.Pin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.MinimumTrials"><code class="docutils literal notranslate"><span class="pre">sweetpea.MinimumTrials</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtMostKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtMostKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.Gen"><code class="docutils literal notranslate"><span class="pre">sweetpea.Gen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.UniformGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.UniGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.CMSGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.CMSGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -137,9 +196,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../api.html">SweetPea API</a> &raquo;</li>
-      <li>Factors and Levels</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">SweetPea API</a></li>
+      <li class="breadcrumb-item active">Factors and Levels</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/factors.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -150,10 +209,10 @@
            <div itemprop="articleBody">
              
   <section id="factors-and-levels">
-<h1>Factors and Levels<a class="headerlink" href="#factors-and-levels" title="Permalink to this heading"></a></h1>
+<h1>Factors and Levels<a class="headerlink" href="#factors-and-levels" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.Factor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Factor" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Factor" title="Link to this definition"></a></dt>
 <dd><p>A factor for use in an experiment design.</p>
 <p>The levels of a factor can be plain <a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a>
 values, any kind of non-<a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a> value (which is
@@ -167,7 +226,7 @@ The names of the levels must be
 distinct; create a level with a weight to get the
 effect of multiple levels with he same name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> – the factor’s name</p></li>
 <li><p><strong>levels</strong> (<em>List</em><em>[</em><a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>]</em>) – the factor’s levels</p></li>
@@ -176,10 +235,10 @@ effect of multiple levels with he same name.</p>
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sweetpea.Factor.name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#sweetpea.Factor.name" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#sweetpea.Factor.name" title="Link to this definition"></a></dt>
 <dd><p>The factor’s name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)">str</a></p>
 </dd>
 </dl>
@@ -187,20 +246,20 @@ effect of multiple levels with he same name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sweetpea.Factor.get_level">
-<span class="sig-name descname"><span class="pre">get_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Factor.get_level" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Factor.get_level" title="Link to this definition"></a></dt>
 <dd><p>Finds a returns a level of the factor with a given
 name. If the factor has multiple levels with the same
 name, any one of them might be returned.</p>
 <p>Indexing a factor with <cite>[]</cite> is the same as calling the
 <cite>get_level</cite> method.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> – the level’s name</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a level with the given name</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level">Level</a></p>
 </dd>
 </dl>
@@ -208,13 +267,13 @@ name, any one of them might be returned.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sweetpea.Factor.levels">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">levels</span></span><a class="headerlink" href="#sweetpea.Factor.levels" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">levels</span></span><a class="headerlink" href="#sweetpea.Factor.levels" title="Link to this definition"></a></dt>
 <dd><p>Returns the factor’s levels.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>a list of levels</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>List[<a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level">Level</a>]</p>
 </dd>
 </dl>
@@ -224,7 +283,7 @@ name, any one of them might be returned.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.Level">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Level" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Level" title="Link to this definition"></a></dt>
 <dd><p>A level for use in a non-derived factor. A level object
 can be used for only one factor.</p>
 <p>If <cite>weight</cite> is provided as a value greater than 1, it
@@ -252,33 +311,33 @@ with greater weight. For sampling strategies without
 replacement, the weight thus increases the number of
 samples that are considered distinct.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> – the level’s name, which can be any value</p></li>
 <li><p><strong>weight</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the level’s weight</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level">Level</a></p>
 </dd>
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sweetpea.Level.name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#sweetpea.Level.name" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#sweetpea.Level.name" title="Link to this definition"></a></dt>
 <dd><p>The level’s name, which can be any kind of value.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sweetpea.Level.factor">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">factor</span></span><a class="headerlink" href="#sweetpea.Level.factor" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">factor</span></span><a class="headerlink" href="#sweetpea.Level.factor" title="Link to this definition"></a></dt>
 <dd><p>Returns the level’s factor. This property exists only
 for a <a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a> object that is extracted from a
 <a class="reference internal" href="#sweetpea.Factor" title="sweetpea.Factor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factor</span></code></a> object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>a factor</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#sweetpea.Factor" title="sweetpea.Factor">Factor</a></p>
 </dd>
 </dl>
@@ -288,12 +347,12 @@ for a <a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.DerivedLevel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">DerivedLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.DerivedLevel" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">DerivedLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.DerivedLevel" title="Link to this definition"></a></dt>
 <dd><p>Creates a derived level, which depends on the levels of
 other factors in a design. All derived levels for one factor
 must use compatible derivations as described in <a class="reference internal" href="derivations.html#derivations"><span class="std std-ref">Derivations</span></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> – the level’s name, which can be any value</p></li>
 <li><p><strong>derivation</strong> (<a class="reference internal" href="derivations.html#sweetpea.Derivation" title="sweetpea.Derivation"><em>Derivation</em></a>) – a condition on other factors’ levels; see
@@ -301,10 +360,10 @@ must use compatible derivations as described in <a class="reference internal" hr
 <li><p><strong>weight</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the level’s weight</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a derived level</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level">Level</a></p>
 </dd>
 </dl>
@@ -312,7 +371,7 @@ must use compatible derivations as described in <a class="reference internal" hr
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.ElseLevel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">ElseLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.ElseLevel" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">ElseLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.ElseLevel" title="Link to this definition"></a></dt>
 <dd><p>Creates a derived level that acts as an “else” case,
 matching any arguments that other derived levels do not
 match. An “else” derived level can appear only once
@@ -320,16 +379,16 @@ among the levels supplied to <a class="reference internal" href="#sweetpea.Facto
 combination with other derived levels. It is compatible
 with any derivation described in <a class="reference internal" href="derivations.html#derivations"><span class="std std-ref">Derivations</span></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> – the level’s name, which can be any value</p></li>
 <li><p><strong>weight</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the level’s weight</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a derived level</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#sweetpea.Level" title="sweetpea.Level">Level</a></p>
 </dd>
 </dl>

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sampling Strategies &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -31,11 +33,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> SweetPea
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SweetPea
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -114,11 +120,65 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">SweetPea API</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="main.html">Experiments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="factors.html">Factors and Levels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="derivations.html">Derivations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Sampling Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.Block"><code class="docutils literal notranslate"><span class="pre">sweetpea.Block</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="factors.html">Factors and Levels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.Factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.get_level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.get_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.levels"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.levels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.Level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Level.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Level.factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.factor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="derivations.html">Derivations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Constraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.Constraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Exclude"><code class="docutils literal notranslate"><span class="pre">sweetpea.Exclude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Pin"><code class="docutils literal notranslate"><span class="pre">sweetpea.Pin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.MinimumTrials"><code class="docutils literal notranslate"><span class="pre">sweetpea.MinimumTrials</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtMostKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtMostKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sampling Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Gen"><code class="docutils literal notranslate"><span class="pre">sweetpea.Gen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.UniformGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.IterateGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.UniGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.CMSGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.CMSGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.SMGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.SMGen</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -136,9 +196,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../api.html">SweetPea API</a> &raquo;</li>
-      <li>Sampling Strategies</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">SweetPea API</a></li>
+      <li class="breadcrumb-item active">Sampling Strategies</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/sampling_strategies.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -149,10 +209,10 @@
            <div itemprop="articleBody">
              
   <section id="sampling-strategies">
-<span id="id1"></span><h1>Sampling Strategies<a class="headerlink" href="#sampling-strategies" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Sampling Strategies<a class="headerlink" href="#sampling-strategies" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.Gen">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Gen</span></span><a class="headerlink" href="#sweetpea.Gen" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Gen</span></span><a class="headerlink" href="#sweetpea.Gen" title="Link to this definition"></a></dt>
 <dd><p>Abstract class for a sampling strategy (i.e., a generator
 of trials).</p>
 <p>A subclass of <a class="reference internal" href="#sweetpea.Gen" title="sweetpea.Gen"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen</span></code></a> can be used instead of an
@@ -178,7 +238,7 @@ experiment’s constraints.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.UniformGen">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">UniformGen</span></span><a class="headerlink" href="#sweetpea.UniformGen" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">UniformGen</span></span><a class="headerlink" href="#sweetpea.UniformGen" title="Link to this definition"></a></dt>
 <dd><p>Automatically selects among strategies that provide uniformity.</p>
 <p><em>Uniformity</em>: Generates trials with a guarantee of
 uniformity, a long as only one trial sequence is requested
@@ -190,7 +250,7 @@ may not produce independent results.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.IterateGen">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">IterateGen</span></span><a class="headerlink" href="#sweetpea.IterateGen" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">IterateGen</span></span><a class="headerlink" href="#sweetpea.IterateGen" title="Link to this definition"></a></dt>
 <dd><p>Automatically selects among strategies that implement
 non-replacement for a single request of multiple
 experiments, but the strategy may or may not provide
@@ -206,7 +266,7 @@ pool of possible trial sequences is exhausted.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.UniGen">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">UniGen</span></span><a class="headerlink" href="#sweetpea.UniGen" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">UniGen</span></span><a class="headerlink" href="#sweetpea.UniGen" title="Link to this definition"></a></dt>
 <dd><p><em>Uniformity</em>: Generates trials with a guarantee of
 uniformity. Unfortunately, due to the difficulty of
 sampling with a guarantee, this stategy is unlikely to
@@ -219,7 +279,7 @@ generate one sequence of trials.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.CMSGen">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">CMSGen</span></span><a class="headerlink" href="#sweetpea.CMSGen" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">CMSGen</span></span><a class="headerlink" href="#sweetpea.CMSGen" title="Link to this definition"></a></dt>
 <dd><p><em>Quasi-Uniformity</em>: Generates trials that appear to be
 uniformly chosen based on the available technology for
 detecting non-uniformity. This strategy may perform well in
@@ -233,7 +293,7 @@ generate one sequence of trials.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.RandomGen">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">RandomGen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acceptable_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.RandomGen" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">RandomGen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acceptable_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.RandomGen" title="Link to this definition"></a></dt>
 <dd><p><em>Uniformity</em>: Generates trials with a guarantee of
 uniformity. Constraints or derived factors with a window
 greater than 1 can force generation to use rejection
@@ -245,7 +305,7 @@ results is constrained to be distinct. The number of
 returned experiments will be less than the requested number
 if the pool of possible trial sequences is exhausted.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>acceptable_error</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – With derived factors in the
 crossing, a number of combinations
 with those levels that are allowed
@@ -263,7 +323,7 @@ to find</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.IterateSATGen">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">IterateSATGen</span></span><a class="headerlink" href="#sweetpea.IterateSATGen" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">IterateSATGen</span></span><a class="headerlink" href="#sweetpea.IterateSATGen" title="Link to this definition"></a></dt>
 <dd><p><em>Non-Uniformity</em>: Generates trials by repeatedly finding
 solutions to an experiment design’s constraints, but with
 no guarantee of uniform coverage or even randomness (i.e.,
@@ -278,7 +338,7 @@ if the pool of possible trial sequences is exhausted.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.IterateILPGen">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">IterateILPGen</span></span><a class="headerlink" href="#sweetpea.IterateILPGen" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">IterateILPGen</span></span><a class="headerlink" href="#sweetpea.IterateILPGen" title="Link to this definition"></a></dt>
 <dd><p>Like <a class="reference internal" href="#sweetpea.IterateSATGen" title="sweetpea.IterateSATGen"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterateSATGen</span></code></a>, but uses Gurobi and requires
 that the <code class="docutils literal notranslate"><span class="pre">gurobipy</span></code> package has been installed.</p>
 <p><em>Non-Uniformity</em>: Generates trials by repeatedly finding
@@ -291,6 +351,22 @@ in one call to <a class="reference internal" href="main.html#sweetpea.synthesize
 results is constrained to be distinct. The number of
 returned experiments will be less than the requested number
 if the pool of possible trial sequences is exhausted.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sweetpea.SMGen">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">SMGen</span></span><a class="headerlink" href="#sweetpea.SMGen" title="Link to this definition"></a></dt>
+<dd><p>An experimental sampler that is especially effective for
+designs that include derived factors with transition level.
+Currently, windows sizes greater than 1 are not supported,
+many constraints are unsupported, and multiple crossings
+are unsupported.</p>
+<p><em>Non-Uniformity</em>: Generates trials through a search that
+may not produce uniform coverage.</p>
+<p><em>Replacement</em>: Generating multiple trials in one call to
+<a class="reference internal" href="main.html#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> produces independent results. That
+is, the single call is the same as separate calls that each
+generate one sequence of trials.</p>
 </dd></dl>
 
 </section>

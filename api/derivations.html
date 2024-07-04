@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Derivations &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> SweetPea
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SweetPea
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -115,11 +121,64 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">SweetPea API</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="main.html">Experiments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="factors.html">Factors and Levels</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Derivations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.Block"><code class="docutils literal notranslate"><span class="pre">sweetpea.Block</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="factors.html">Factors and Levels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.Factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.get_level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.get_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Factor.levels"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.levels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.Level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Level.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.Level.factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.factor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Derivations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Constraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.Constraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Exclude"><code class="docutils literal notranslate"><span class="pre">sweetpea.Exclude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.Pin"><code class="docutils literal notranslate"><span class="pre">sweetpea.Pin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.MinimumTrials"><code class="docutils literal notranslate"><span class="pre">sweetpea.MinimumTrials</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtMostKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtMostKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.Gen"><code class="docutils literal notranslate"><span class="pre">sweetpea.Gen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.UniformGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.UniGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.CMSGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.CMSGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -137,9 +196,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../api.html">SweetPea API</a> &raquo;</li>
-      <li>Derivations</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">SweetPea API</a></li>
+      <li class="breadcrumb-item active">Derivations</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/derivations.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -150,23 +209,27 @@
            <div itemprop="articleBody">
              
   <section id="derivations">
-<span id="id1"></span><h1>Derivations<a class="headerlink" href="#derivations" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Derivations<a class="headerlink" href="#derivations" title="Link to this heading"></a></h1>
 <p>A <cite>Derivation</cite> is identifies combinations of factor levels that select
 another level that is constructed with <a class="reference internal" href="factors.html#sweetpea.DerivedLevel" title="sweetpea.DerivedLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedLevel</span></code></a>. Derived
 levels for one factor must all have compatible derivations, which
 means that they must depend on the same factors in the same order, have
 the same window width, same window stride, and the same starting
 trial. However, <a class="reference internal" href="factors.html#sweetpea.ElseLevel" title="sweetpea.ElseLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElseLevel</span></code></a> is compatible with any derivation,
-as long as other levels in the same factor have compatible derivations.</p>
+as long as other levels in the same factor have compatible derivations.
+For every combination of levels in the factors that a derived factor
+depends on, there must be exactly one matching derived level, taking
+into account that a level created with <a class="reference internal" href="factors.html#sweetpea.ElseLevel" title="sweetpea.ElseLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElseLevel</span></code></a> matches a
+combination that is not matched by other levels.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.Derivation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Derivation</span></span><a class="headerlink" href="#sweetpea.Derivation" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Derivation</span></span><a class="headerlink" href="#sweetpea.Derivation" title="Link to this definition"></a></dt>
 <dd><p>Abstract class representing a derived-level specification.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.WithinTrial">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">WithinTrial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.WithinTrial" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">WithinTrial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.WithinTrial" title="Link to this definition"></a></dt>
 <dd><p>Describes a level that is selected depending on levels
 from other factors, all within the same trial. The level
 is equivalent to one created via <a class="reference internal" href="#sweetpea.Window" title="sweetpea.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a> with a
@@ -175,7 +238,7 @@ width of 1 and a stride of 1.</p>
 or derived, but any derived factor in <cite>factors</cite> must not
 have a window stride greater than 1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>, </em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>]</em>) – a function that takes as many level
 names as factors in <cite>factors</cite>; the
@@ -187,7 +250,7 @@ whether level with this derivation is
 selected</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#sweetpea.Derivation" title="sweetpea.Derivation">Derivation</a></p>
 </dd>
 </dl>
@@ -195,7 +258,7 @@ selected</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.Transition">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Transition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Transition" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Transition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Transition" title="Link to this definition"></a></dt>
 <dd><p>Describes a level that is selected depending on a
 combination of levels from other factors in the current
 trial and the immediately preceding trial. The level
@@ -205,7 +268,7 @@ width of 2 and a stride of 1.</p>
 in <cite>factors</cite> must not have a window stride greater
 than 1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>]</em>) – a function that takes as many level
 dictionaries as factors in <cite>factors</cite>; in each
@@ -221,7 +284,7 @@ trials determine whether a level with
 the returned derivation is selected</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#sweetpea.Derivation" title="sweetpea.Derivation">Derivation</a></p>
 </dd>
 </dl>
@@ -229,7 +292,7 @@ the returned derivation is selected</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.Window">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Window" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Window" title="Link to this definition"></a></dt>
 <dd><p>Creates a level that is selected depending on a
 combination of levels from other factors in the current
 trial and multiple preceding trials.</p>
@@ -244,7 +307,7 @@ trial.</p>
 in <cite>factors</cite> must not have a window stride greater
 than 1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>]</em>) – a function that takes as many level
 dictionaries as factors in <cite>factors</cite>; in each
@@ -277,7 +340,7 @@ have a level for some trials, then <cite>predicate</cite> must handle
 <cite>None</cite> values for the corresponding dictionaries and keys</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#sweetpea.Derivation" title="sweetpea.Derivation">Derivation</a></p>
 </dd>
 </dl>

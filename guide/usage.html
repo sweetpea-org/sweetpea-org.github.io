@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using SweetPea &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -33,11 +35,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> SweetPea
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SweetPea
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -116,11 +122,64 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">SweetPea API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/main.html">Experiments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/factors.html">Factors and Levels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/derivations.html">Derivations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/constraints.html">Constraints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/sampling_strategies.html">Sampling Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/main.html">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.Block"><code class="docutils literal notranslate"><span class="pre">sweetpea.Block</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/factors.html">Factors and Levels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.Factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.Factor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.Factor.get_level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.get_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.Factor.levels"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.levels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.Level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.Level.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.Level.factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.factor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/derivations.html">Derivations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/constraints.html">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.Constraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.Constraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.Exclude"><code class="docutils literal notranslate"><span class="pre">sweetpea.Exclude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.Pin"><code class="docutils literal notranslate"><span class="pre">sweetpea.Pin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.MinimumTrials"><code class="docutils literal notranslate"><span class="pre">sweetpea.MinimumTrials</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.AtMostKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtMostKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/sampling_strategies.html">Sampling Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.Gen"><code class="docutils literal notranslate"><span class="pre">sweetpea.Gen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.UniformGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.IterateGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.UniGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.CMSGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.CMSGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -138,9 +197,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../guide.html">SweetPea Guide</a> &raquo;</li>
-      <li>Using SweetPea</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../guide.html">SweetPea Guide</a></li>
+      <li class="breadcrumb-item active">Using SweetPea</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/guide/usage.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -151,7 +210,7 @@
            <div itemprop="articleBody">
              
   <section id="using-sweetpea">
-<span id="guide-usage"></span><h1>Using SweetPea<a class="headerlink" href="#using-sweetpea" title="Permalink to this heading"></a></h1>
+<span id="guide-usage"></span><h1>Using SweetPea<a class="headerlink" href="#using-sweetpea" title="Link to this heading"></a></h1>
 <p>So you’ve decided to design a factorial experiment. That’s excellent! Factorial
 experimental designs are a great way to build repeatable experiments with
 multiple independent variables. Let’s design our experiment in words first, and
@@ -162,7 +221,7 @@ then build it in SweetPea.</p>
 check out <a class="reference internal" href="factorial_design.html#guide-factorial-design"><span class="std std-ref">our short primer</span></a> first.</p>
 </div>
 <section id="a-simple-stroop-experiment">
-<h2>A Simple Stroop Experiment<a class="headerlink" href="#a-simple-stroop-experiment" title="Permalink to this heading"></a></h2>
+<h2>A Simple Stroop Experiment<a class="headerlink" href="#a-simple-stroop-experiment" title="Link to this heading"></a></h2>
 <p>For our example, we’ll be testing the <a class="reference external" href="https://en.wikipedia.org/wiki/Stroop_effect">Stroop effect</a>. From the Wikipedia article:</p>
 <blockquote>
 <div><p>In psychology, the <strong>Stroop effect</strong> is the delay in reaction time between
@@ -186,8 +245,8 @@ participant, where each trial is a single color+text pairing. For this
 experiment, we will use the three colors red, green, and blue, and we will also
 use the names of those colors as the text. All together, this gives us 9
 possible values for each trial:</p>
-<table class="colwidths-auto docutils align-center" id="id1">
-<caption><span class="caption-text">Stroop Effect Trials</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">Stroop Effect Trials</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head stub"></th>
 <th class="head"><p>Red (Text)</p></th>
@@ -220,7 +279,7 @@ and the <code class="docutils literal notranslate"><span class="pre">text</span>
 participant and asking them to identify the color in which the text is written.
 We will synthesize some <em>trial sequences</em> for our experiment now.</p>
 <section id="building-the-simple-stroop-experiment">
-<h3>Building the Simple Stroop Experiment<a class="headerlink" href="#building-the-simple-stroop-experiment" title="Permalink to this heading"></a></h3>
+<h3>Building the Simple Stroop Experiment<a class="headerlink" href="#building-the-simple-stroop-experiment" title="Link to this heading"></a></h3>
 <p>To build this simple Stroop experiment, we import and use the following SweetPea
 language forms:</p>
 <ul class="simple">
@@ -229,7 +288,7 @@ language forms:</p>
 <li><p><a class="reference internal" href="../api/main.html#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> — synthesizes trial sequences</p></li>
 </ul>
 <p>To put it together, we do:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">color</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">([</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">],</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">],</span> <span class="p">[])</span>
@@ -240,7 +299,7 @@ language forms:</p>
 the output will not be the same every time. However, when we ran the code to
 write this tutorial, we saw the following output (your output should look
 similar, though probably not identical):</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">print_experiments</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">print_experiments</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
 <span class="go">1 trial sequences found.</span>
 <span class="go">Experiment 0:</span>
@@ -263,7 +322,7 @@ of synthesis.</p>
 <p>We generated a <em>fully-crossed experiment</em>: all possible color-text pairs were
 generated, though their order was randomized. We can see this by sorting a
 simplified representation of the experiment:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">experiments_to_tuples</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">experiments_to_tuples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We immediately access the first element of the returned list.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># This is because we only generated one trial run.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simple</span> <span class="o">=</span> <span class="n">experiments_to_tuples</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -287,11 +346,11 @@ simplified representation of the experiment:</p>
 resulting trials.</p>
 </section>
 <section id="sweetpea-feature-recap">
-<h3>SweetPea Feature Recap<a class="headerlink" href="#sweetpea-feature-recap" title="Permalink to this heading"></a></h3>
+<h3>SweetPea Feature Recap<a class="headerlink" href="#sweetpea-feature-recap" title="Link to this heading"></a></h3>
 <p>In building our simple Stroop experiment, we used a few of the most important
 SweetPea forms. Let’s review them now.</p>
 <section id="simple-factors-and-levels">
-<h4>Simple Factors and Levels<a class="headerlink" href="#simple-factors-and-levels" title="Permalink to this heading"></a></h4>
+<h4>Simple Factors and Levels<a class="headerlink" href="#simple-factors-and-levels" title="Link to this heading"></a></h4>
 <p><em>Simple factors</em> are factors that are composed only of simple levels. <em>Simple
 levels</em> are levels that are essentially just names and nothing more; they are
 not dependent on any other factors or levels.</p>
@@ -305,7 +364,7 @@ those levels are not instances of the <a class="reference internal" href="../api
 automatically convert them into instances of <a class="reference internal" href="../api/factors.html#sweetpea.Level" title="sweetpea.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a>.</p>
 <p>To put all this information together: you can create a simple factor composed of
 simple levels by just using the <a class="reference internal" href="../api/factors.html#sweetpea.Factor" title="sweetpea.Factor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factor</span></code></a> initializer:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;factor_name&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">factor</span><span class="o">.</span><span class="n">levels</span><span class="p">)</span>
 <span class="go">4</span>
@@ -321,15 +380,15 @@ simple levels by just using the <a class="reference internal" href="../api/facto
 the indexing function expects its argument to be a string! This means that
 you cannot retrieve the second level of the above factor by the value we
 used to create it:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
 <span class="gt">Traceback (most recent call last):</span>
-  <span class="c">...</span>
+<span class="w">  </span><span class="c">...</span>
 <span class="gr">KeyError</span>: <span class="n">&#39;Factor factor_name has no level named 2.&#39;</span>
 </pre></div>
 </div>
 <p>Instead, you must use the string representation generated by the value’s
 <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method, which can be called using the <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">name</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">name</span>
 <span class="go">&#39;2&#39;</span>
 </pre></div>
 </div>
@@ -337,12 +396,12 @@ used to create it:</p>
 <p>We will discuss complex factors (also known as <em>derived factors</em>) a bit later.</p>
 </section>
 <section id="block-creation">
-<h4>Block Creation<a class="headerlink" href="#block-creation" title="Permalink to this heading"></a></h4>
+<h4>Block Creation<a class="headerlink" href="#block-creation" title="Link to this heading"></a></h4>
 <p>After you get your factors and levels together, you can create an experimental
 design <a class="reference internal" href="../api/main.html#sweetpea.Block" title="sweetpea.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a> using one of the appropriate functions. We showed how it
 looks to use <code class="xref py py-func docutils literal notranslate"><span class="pre">fully_cross_block()</span></code> in our simple example above. The
 function takes a number of arguments, but in the simplest case you need only do:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">fully_cross_block</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">fully_cross_block</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;f2&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">fully_cross_block</span><span class="p">([</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">],</span> <span class="p">[</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">],</span> <span class="p">[])</span>
@@ -354,7 +413,7 @@ of your factors as both the <code class="docutils literal notranslate"><span cla
 <code class="docutils literal notranslate"><span class="pre">constraints</span></code> empty with an empty list.</p>
 </section>
 <section id="trial-synthesis">
-<h4>Trial Synthesis<a class="headerlink" href="#trial-synthesis" title="Permalink to this heading"></a></h4>
+<h4>Trial Synthesis<a class="headerlink" href="#trial-synthesis" title="Link to this heading"></a></h4>
 <p>Once you have a complete experimental design in the form of a <a class="reference internal" href="../api/main.html#sweetpea.Block" title="sweetpea.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a>,
 you’re ready to use it to synthesize trials. In the above example, we used the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials_non_uniform()</span></code>, which conducts non-uniform SAT-sampling
@@ -365,11 +424,11 @@ progress, but there does exist a function that tries to accomplish it:
 </section>
 </section>
 <section id="working-with-derived-levels">
-<h2>Working With Derived Levels<a class="headerlink" href="#working-with-derived-levels" title="Permalink to this heading"></a></h2>
+<h2>Working With Derived Levels<a class="headerlink" href="#working-with-derived-levels" title="Link to this heading"></a></h2>
 <p>We’ve covered simple factors and levels, so now we move on to the more complex
 capabilities of SweetPea: derivations and constraints.</p>
 <section id="derivation">
-<h3>Derivation<a class="headerlink" href="#derivation" title="Permalink to this heading"></a></h3>
+<h3>Derivation<a class="headerlink" href="#derivation" title="Link to this heading"></a></h3>
 <p><em>Derivation</em> is the process of creating new levels that depend in some way upon
 information contained in other levels from other factors — and sometimes other
 trials. In other words, <em>derivation</em> is what produces <a class="reference internal" href="../api/factors.html#sweetpea.DerivedLevel" title="sweetpea.DerivedLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedLevels</span></code></a>.</p>
@@ -381,14 +440,14 @@ determined by the same trial’s <code class="docutils literal notranslate"><spa
 <code class="docutils literal notranslate"><span class="pre">congruency</span></code> is <code class="docutils literal notranslate"><span class="pre">congruent</span></code>. Otherwise, the trial is <code class="docutils literal notranslate"><span class="pre">incongruent</span></code>.</p>
 <p>Let’s create the <code class="docutils literal notranslate"><span class="pre">congruency</span></code> factor now. We start by recreating the <code class="docutils literal notranslate"><span class="pre">color</span></code>
 and <code class="docutils literal notranslate"><span class="pre">text</span></code> simple factors from before:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">color</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Next, we need to define the predicate functions that will be used to determine
 whether a color-text pair is congruent.</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">congruent</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">congruent</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">color</span> <span class="o">==</span> <span class="n">word</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">incongruent</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -402,21 +461,21 @@ instances must be manually instantiated. <a class="reference internal" href="../
 also require a <em>derivation window</em> as an argument. We will discuss this more
 in-depth in a little bit, so for now just trust us that we want to use the
 <a class="reference internal" href="../api/derivations.html#sweetpea.WithinTrial" title="sweetpea.WithinTrial"><code class="xref py py-class docutils literal notranslate"><span class="pre">WithinTrial</span></code></a> for this particular job:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">DerivedLevel</span><span class="p">,</span> <span class="n">WithinTrial</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">DerivedLevel</span><span class="p">,</span> <span class="n">WithinTrial</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">con_level</span> <span class="o">=</span> <span class="n">DerivedLevel</span><span class="p">(</span><span class="s2">&quot;congruent&quot;</span><span class="p">,</span> <span class="n">WithinTrial</span><span class="p">(</span><span class="n">congruent</span><span class="p">,</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inc_level</span> <span class="o">=</span> <span class="n">DerivedLevel</span><span class="p">(</span><span class="s2">&quot;incongruent&quot;</span><span class="p">,</span> <span class="n">WithinTrial</span><span class="p">(</span><span class="n">incongruent</span><span class="p">,</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">]))</span>
 </pre></div>
 </div>
 <p>Finally, we can construct the <code class="docutils literal notranslate"><span class="pre">congruency</span></code> factor:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">congruency</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;congruency&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">con_level</span><span class="p">,</span> <span class="n">inc_level</span><span class="p">])</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">congruency</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;congruency&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">con_level</span><span class="p">,</span> <span class="n">inc_level</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Now when we create a full crossing using <a class="reference internal" href="../api/main.html#sweetpea.CrossBlock" title="sweetpea.CrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossBlock</span></code></a>, we will
 include the <code class="docutils literal notranslate"><span class="pre">congruency</span></code> factor with the rest of the design. However, it is
 <em>not</em> part of the crossing itself. The result of synthesizing trials from such a
 crossing will be a random arrangement of the following trials:</p>
-<table class="colwidths-auto docutils align-center" id="id2">
-<caption><span class="caption-text">Stroop Effect Trials With Congruency</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<table class="docutils align-center" id="id2">
+<caption><span class="caption-text">Stroop Effect Trials With Congruency</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Color</p></th>
 <th class="head"><p>Text</p></th>
@@ -464,7 +523,7 @@ crossing will be a random arrangement of the following trials:</p>
 </table>
 <p>We can verify this by using the <a class="reference internal" href="../api/main.html#sweetpea.experiments_to_tuples" title="sweetpea.experiments_to_tuples"><code class="xref py py-func docutils literal notranslate"><span class="pre">experiments_to_tuples()</span></code></a> function on the
 result of synthesizing one trial run from this design:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span> <span class="n">experiments_to_tuples</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span> <span class="n">experiments_to_tuples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">design</span> <span class="o">=</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">congruency</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">crossing</span> <span class="o">=</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">crossing</span><span class="p">,</span> <span class="p">[])</span>
@@ -486,7 +545,7 @@ result of synthesizing one trial run from this design:</p>
 </div>
 </section>
 <section id="constraints">
-<h3>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading"></a></h3>
+<h3>Constraints<a class="headerlink" href="#constraints" title="Link to this heading"></a></h3>
 <p>Sometimes when designing an experiment, you’d like to impose some constraints on
 the mechanisms that generate trial sequences. SweetPea has you covered.</p>
 <p>Let’s say we look at the above list of trials and decide “Hmm, maybe we should
@@ -495,7 +554,7 @@ are six <code class="docutils literal notranslate"><span class="pre">incongruent
 <p>Arbitrarily, we will choose to limit trial sequences such that only two
 <code class="docutils literal notranslate"><span class="pre">incongruent</span></code> trials may appear in a row. This will be accomplished using the
 <a class="reference internal" href="../api/constraints.html#sweetpea.AtMostKInARow" title="sweetpea.AtMostKInARow"><code class="xref py py-func docutils literal notranslate"><span class="pre">AtMostKInARow()</span></code></a> function.</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># We resume from the previous session.</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># We resume from the previous session.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">AtMostKInARow</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">congruency_constraint</span> <span class="o">=</span> <span class="n">AtMostKInARow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">congruency</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">crossing</span><span class="p">,</span> <span class="p">[</span><span class="n">congruency_constraint</span><span class="p">])</span>

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python Style Guide &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> SweetPea
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SweetPea
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -115,11 +121,64 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">SweetPea API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../api/main.html">Experiments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/factors.html">Factors and Levels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/derivations.html">Derivations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/constraints.html">Constraints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/sampling_strategies.html">Sampling Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/main.html">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.Block"><code class="docutils literal notranslate"><span class="pre">sweetpea.Block</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/factors.html">Factors and Levels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.Factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Factor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Factor.get_level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.get_level()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Factor.levels"><code class="docutils literal notranslate"><span class="pre">sweetpea.Factor.levels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.Level"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Level.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/factors.html#sweetpea.Level.factor"><code class="docutils literal notranslate"><span class="pre">sweetpea.Level.factor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/derivations.html">Derivations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/derivations.html#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/constraints.html">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.Constraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.Constraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.Exclude"><code class="docutils literal notranslate"><span class="pre">sweetpea.Exclude</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.Pin"><code class="docutils literal notranslate"><span class="pre">sweetpea.Pin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.MinimumTrials"><code class="docutils literal notranslate"><span class="pre">sweetpea.MinimumTrials</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.AtMostKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtMostKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/sampling_strategies.html">Sampling Strategies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.Gen"><code class="docutils literal notranslate"><span class="pre">sweetpea.Gen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.UniformGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.UniGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.CMSGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.CMSGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -137,10 +196,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../guide.html">SweetPea Guide</a> &raquo;</li>
-          <li><a href="../contributing.html">Contributing to SweetPea</a> &raquo;</li>
-      <li>Python Style Guide</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../guide.html">SweetPea Guide</a></li>
+          <li class="breadcrumb-item"><a href="../contributing.html">Contributing to SweetPea</a></li>
+      <li class="breadcrumb-item active">Python Style Guide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/guide/contributing/py_style_guide.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -151,11 +210,11 @@
            <div itemprop="articleBody">
              
   <section id="python-style-guide">
-<span id="py-style-guide"></span><h1>Python Style Guide<a class="headerlink" href="#python-style-guide" title="Permalink to this heading"></a></h1>
+<span id="py-style-guide"></span><h1>Python Style Guide<a class="headerlink" href="#python-style-guide" title="Link to this heading"></a></h1>
 <p>This section documents the specifics of the Python style preferred in the
 SweetPea code.</p>
 <section id="note-on-pep-8">
-<h2>Note on PEP 8<a class="headerlink" href="#note-on-pep-8" title="Permalink to this heading"></a></h2>
+<h2>Note on PEP 8<a class="headerlink" href="#note-on-pep-8" title="Link to this heading"></a></h2>
 <p>In most cases, SweetPea’s code follows <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>, the official Python style guide.
 However, there are some extra rules we follow, and some rules we relax. These
 are all detailed below. If something is not detailed below, look for examples of
@@ -164,12 +223,12 @@ something should be done, we defer to PEP 8 or, if PEP 8 has nothing to say on
 the matter, the developer’s intuition.</p>
 </section>
 <section id="maximum-line-length">
-<h2>Maximum Line Length<a class="headerlink" href="#maximum-line-length" title="Permalink to this heading"></a></h2>
+<h2>Maximum Line Length<a class="headerlink" href="#maximum-line-length" title="Link to this heading"></a></h2>
 <p>Lines of code are limited to 120 characters in length. Comments and docstrings
 are limited to 80 characters in length.</p>
 </section>
 <section id="blank-lines">
-<h2>Blank Lines<a class="headerlink" href="#blank-lines" title="Permalink to this heading"></a></h2>
+<h2>Blank Lines<a class="headerlink" href="#blank-lines" title="Link to this heading"></a></h2>
 <p>Top-level constructs, such as classes, functions, etc, are preceded by two blank
 lines.</p>
 <p>Related single-line statements can be grouped or separated by single blank
@@ -183,7 +242,7 @@ as follows:</p>
 </div>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading"></a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading"></a></h2>
 <ul>
 <li><p>Never use star-imports (i.e., imports of the form <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module&gt;</span> <span class="pre">import</span> <span class="pre">*</span></code>).</p></li>
 <li><p>Prefer explicit imports (i.e., <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module&gt;</span> <span class="pre">import</span> <span class="pre">&lt;item1&gt;,</span> <span class="pre">&lt;item2&gt;</span></code>).</p></li>
@@ -225,13 +284,13 @@ the same section, separated by a blank line.</p></li>
 <p>(Where <code class="docutils literal notranslate"><span class="pre">my_package</span></code> is the module in which this code appears.)</p>
 </section>
 <section id="string-quotes">
-<h2>String Quotes<a class="headerlink" href="#string-quotes" title="Permalink to this heading"></a></h2>
+<h2>String Quotes<a class="headerlink" href="#string-quotes" title="Link to this heading"></a></h2>
 <p>Prefer double quotation marks <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> for most strings. Single quotation marks
 <code class="docutils literal notranslate"><span class="pre">'</span></code> can be used for literal values, but we are moving away from this style.</p>
 <p>Triple-quoted strings <em>always</em> use double quotation marks <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p>
 </section>
 <section id="trailing-commas">
-<h2>Trailing Commas<a class="headerlink" href="#trailing-commas" title="Permalink to this heading"></a></h2>
+<h2>Trailing Commas<a class="headerlink" href="#trailing-commas" title="Link to this heading"></a></h2>
 <p>Prefer trailing commas in lists of items where each item appears on its own
 line. For example, you may have a list of people where each <code class="docutils literal notranslate"><span class="pre">Person</span></code> is
 defined on its own line. Leave a trailing comma after the final element:</p>
@@ -244,7 +303,7 @@ defined on its own line. Leave a trailing comma after the final element:</p>
 </div>
 </section>
 <section id="comments">
-<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this heading"></a></h2>
+<h2>Comments<a class="headerlink" href="#comments" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><em>Comments are part of the code.</em> If you change some code in a way that renders
 the comment incorrect, your code is now incorrect. Update comments whenever
@@ -254,7 +313,7 @@ consistency, correct spelling, punctuation, etc.</p></li>
 <li><p>Separate sentences with one space, not two.</p></li>
 </ul>
 <section id="block-comments-inline-comments-and-documentation-strings">
-<h3>Block Comments, Inline Comments, and Documentation Strings<a class="headerlink" href="#block-comments-inline-comments-and-documentation-strings" title="Permalink to this heading"></a></h3>
+<h3>Block Comments, Inline Comments, and Documentation Strings<a class="headerlink" href="#block-comments-inline-comments-and-documentation-strings" title="Link to this heading"></a></h3>
 <p><em>Block comments</em> are lines consisting of only comment material, written as one
 or more lines of (possibly indented) text written after a leading <code class="docutils literal notranslate"><span class="pre">#</span></code> on each
 line.</p>
@@ -266,7 +325,7 @@ strings that adorn functions, classes, and modules. There are extra rules about
 docstrings, found in <a class="reference internal" href="rest_style_guide.html#rest-style-guide"><span class="std std-ref">the reST style guide</span></a>.</p>
 <p>To put all these into an example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Type1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="n">Type2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReturnType</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;This is the *docstring* that documents the :func:`.some_function`</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is the *docstring* that documents the :func:`.some_function`</span>
 <span class="sd">    function.</span>
 
 <span class="sd">    ... (the rest of the docstring)</span>
@@ -294,7 +353,7 @@ docstrings, found in <a class="reference internal" href="rest_style_guide.html#r
 </section>
 </section>
 <section id="type-checking-or-linting-overrides">
-<h2>Type-Checking or Linting Overrides<a class="headerlink" href="#type-checking-or-linting-overrides" title="Permalink to this heading"></a></h2>
+<h2>Type-Checking or Linting Overrides<a class="headerlink" href="#type-checking-or-linting-overrides" title="Link to this heading"></a></h2>
 <p>Sometimes, the type-checkers or linters we use are wrong about something,
 possibly due to a bug or insufficiency. In these cases, they can be disabled on
 a line-by-line basis using specific inline comment forms.</p>
@@ -317,7 +376,7 @@ lines. The <code class="xref py py-class docutils literal notranslate"><span cla
 (with some unimportant parts abridged for clarity):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SimpleLevel</span><span class="p">(</span><span class="n">Level</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;... (Docstring removed for this example.)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;... (Docstring removed for this example.)&quot;&quot;&quot;</span>
 
     <span class="n">weight</span><span class="p">:</span> <span class="n">InitVar</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
