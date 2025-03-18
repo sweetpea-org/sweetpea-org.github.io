@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Derivations &mdash; SweetPea  documentation</title>
+  <title>Distributions &mdash; SweetPea  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -21,8 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Constraints" href="constraints.html" />
-    <link rel="prev" title="Factors and Levels" href="factors.html" />
+    <link rel="prev" title="Sampling Strategies" href="sampling_strategies.html" />
 <link rel="stylesheet" type="text/css"
       href="../_static/css/custom.css" />
 
@@ -153,15 +152,19 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.ContinuousFactor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.ContinuousFactor.generate"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.generate()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.DiscreteFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.DiscreteFactor</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Derivations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivations.html">Derivations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Derivation"><code class="docutils literal notranslate"><span class="pre">sweetpea.Derivation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a><ul>
@@ -188,13 +191,19 @@
 <li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.SMGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.SMGen</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="distributions.html">Distributions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.UniformDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformDistribution</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.GaussianDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.GaussianDistribution</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.ExponentialDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExponentialDistribution</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sweetpea.Distribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution.sample()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.UniformDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.GaussianDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.GaussianDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.ExponentialDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExponentialDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -216,9 +225,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../api.html">SweetPea API</a></li>
-      <li class="breadcrumb-item active">Derivations</li>
+      <li class="breadcrumb-item active">Distributions</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/api/derivations.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/distributions.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -226,142 +235,155 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="derivations">
-<span id="id1"></span><h1>Derivations<a class="headerlink" href="#derivations" title="Link to this heading"></a></h1>
-<p>A <cite>Derivation</cite> is identifies combinations of factor levels that select
-another level that is constructed with <a class="reference internal" href="factors.html#sweetpea.DerivedLevel" title="sweetpea.DerivedLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedLevel</span></code></a>. Derived
-levels for one factor must all have compatible derivations, which
-means that they must depend on the same factors in the same order, have
-the same window width, same window stride, and the same starting
-trial. However, <a class="reference internal" href="factors.html#sweetpea.ElseLevel" title="sweetpea.ElseLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElseLevel</span></code></a> is compatible with any derivation,
-as long as other levels in the same factor have compatible derivations.
-For every combination of levels in the factors that a derived factor
-depends on, there must be exactly one matching derived level, taking
-into account that a level created with <a class="reference internal" href="factors.html#sweetpea.ElseLevel" title="sweetpea.ElseLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElseLevel</span></code></a> matches a
-combination that is not matched by other levels.</p>
+  <section id="distributions">
+<span id="distribution"></span><h1>Distributions<a class="headerlink" href="#distributions" title="Link to this heading"></a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="sweetpea.Derivation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Derivation</span></span><a class="headerlink" href="#sweetpea.Derivation" title="Link to this definition"></a></dt>
-<dd><p>Abstract class representing a derived-level specification.</p>
+<dt class="sig sig-object py" id="sweetpea.Distribution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Distribution</span></span><a class="headerlink" href="#sweetpea.Distribution" title="Link to this definition"></a></dt>
+<dd><p>Abstract class for the input distribution for <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>.
+A subclass of <a class="reference internal" href="#sweetpea.Distribution" title="sweetpea.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> must be instantiated
+to represent the distribution that the factor follows when
+generating values dynamically. When a <a class="reference internal" href="#sweetpea.Distribution" title="sweetpea.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> is used
+to initialize a <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>, a corresponding
+<cite>distribution</cite> object is created for the factor.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sweetpea.Distribution.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Distribution.sample" title="Link to this definition"></a></dt>
+<dd><p>Generate values based on the input distribution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a value sampled from the input distribution</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="sweetpea.WithinTrial">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">WithinTrial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.WithinTrial" title="Link to this definition"></a></dt>
-<dd><p>Describes a level that is selected depending on levels
-from other factors, all within the same trial. The level
-is equivalent to one created via <a class="reference internal" href="#sweetpea.Window" title="sweetpea.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a> with a
-width of 1 and a stride of 1.</p>
-<p>The factors that the level depends on can be non-derived
-or derived, but any derived factor in <cite>factors</cite> must not
-have a window stride greater than 1.</p>
+<dt class="sig sig-object py" id="sweetpea.UniformDistribution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">UniformDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.UniformDistribution" title="Link to this definition"></a></dt>
+<dd><p>Represents a uniform distribution for <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>,
+where values are sampled evenly between the
+specified <cite>low</cite> and <cite>high</cite> bounds.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>, </em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – a function that takes as many level
-names as factors in <cite>factors</cite>; the
-function should returns true if the
-combination of levels implies the
-result derivation</p></li>
-<li><p><strong>factors</strong> (<em>List</em><em>(</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>)</em>) – a list of factors whose levels determine
-whether level with this derivation is
-selected</p></li>
+<li><p><strong>low</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – The lower bound of the uniform distribution.</p></li>
+<li><p><strong>high</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – The upper bound of the uniform distribution. Must be greater than lower bound.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Derivation" title="sweetpea.Derivation">Derivation</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Distribution" title="sweetpea.Distribution">Distribution</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="sweetpea.Transition">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Transition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Transition" title="Link to this definition"></a></dt>
-<dd><p>Describes a level that is selected depending on a
-combination of levels from other factors in the current
-trial and the immediately preceding trial. The level
-is equivalent to one created via <a class="reference internal" href="#sweetpea.Window" title="sweetpea.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a> with a
-width of 2 and a stride of 1.</p>
-<p>The same as for <a class="reference internal" href="#sweetpea.WithinTrial" title="sweetpea.WithinTrial"><code class="xref py py-class docutils literal notranslate"><span class="pre">WithinTrial</span></code></a>, any derived factor
-in <cite>factors</cite> must not have a window stride greater
-than 1.</p>
+<dt class="sig sig-object py" id="sweetpea.GaussianDistribution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">GaussianDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.GaussianDistribution" title="Link to this definition"></a></dt>
+<dd><p>Represents a Gaussian (normal) distribution for
+<a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>, where values are sampled according
+to the specified mean and standard deviation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – a function that takes as many level
-dictionaries as factors in <cite>factors</cite>; in each
-dictionary, <code class="docutils literal notranslate"><span class="pre">-1</span></code> is mapped
-to the level value for the previous
-trial, and <code class="docutils literal notranslate"><span class="pre">0</span></code> is mapped to the
-level value for the current trial; the
-function should return true if the
-combination of levels implies the
-result derivation</p></li>
-<li><p><strong>factors</strong> (<em>List</em><em>(</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>)</em>) – a list of factors whose levels across
-trials determine whether a level with
-the returned derivation is selected</p></li>
+<li><p><strong>mean</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – The mean of the normal distribution.</p></li>
+<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – The standard deviation of the distribution. Must be greater than zero.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Derivation" title="sweetpea.Derivation">Derivation</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Distribution" title="sweetpea.Distribution">Distribution</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="sweetpea.Window">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.Window" title="Link to this definition"></a></dt>
-<dd><p>Creates a level that is selected depending on a
-combination of levels from other factors in the current
-trial and multiple preceding trials.</p>
-<p>This class generalizes <a class="reference internal" href="#sweetpea.WithinTrial" title="sweetpea.WithinTrial"><code class="xref py py-class docutils literal notranslate"><span class="pre">WithinTrial</span></code></a> and
-<a class="reference internal" href="#sweetpea.Transition" title="sweetpea.Transition"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transition</span></code></a> to select a level depending on
-<cite>width</cite> consecutive trials, and where trials that are
-assigned a level value are separated by <cite>stride</cite>-1
-intervening trials. It also allows an initial <cite>start</cite>
-trial to override the default computation of a starting
-trial.</p>
-<p>The same as for <a class="reference internal" href="#sweetpea.WithinTrial" title="sweetpea.WithinTrial"><code class="xref py py-class docutils literal notranslate"><span class="pre">WithinTrial</span></code></a>, any derived factor
-in <cite>factors</cite> must not have a window stride greater
-than 1.</p>
+<dt class="sig sig-object py" id="sweetpea.ExponentialDistribution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">ExponentialDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.ExponentialDistribution" title="Link to this definition"></a></dt>
+<dd><p>Represents an exponential distribution for <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>,
+where values are sampled according to the specified <cite>rate</cite> parameter
+(the inverse of the mean) of the exponential distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rate</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – The rate parameter of the exponential distribution. Must be greater than zero.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Distribution" title="sweetpea.Distribution">Distribution</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sweetpea.LogNormalDistribution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">LogNormalDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.LogNormalDistribution" title="Link to this definition"></a></dt>
+<dd><p>Represents a log-normal distribution for <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>,
+where values are sampled according to the specified <cite>mean</cite> and <cite>sigma</cite> parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – a function that takes as many level
-dictionaries as factors in <cite>factors</cite>; in each
-dictionary, <code class="docutils literal notranslate"><span class="pre">0</span></code> is mapped to the
-level value for the latest of
-<cite>width</cite> trials, and so on coutning backwards
-to <code class="docutils literal notranslate"><span class="pre">1-width</span></code>; the
-function should return true if the
-combination of levels implies this
-level</p></li>
-<li><p><strong>factors</strong> (<em>List</em><em>(</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>)</em>) – a list of factors whose levels across
-trials determine whether a level with
-the returned derivation is selected</p></li>
-<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – the number of trials of <cite>factors</cite> to
-consider when selecting the new, derived
-level</p></li>
-<li><p><strong>stride</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – one more than the number of trials to
-skip between the trials that are
-considered when selecting the new,
-derived level</p></li>
-<li><p><strong>start</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>]</em>) – the first trail (counting from 0) that
-the derivation’s factor will have a level;
-a <cite>None</cite> value (the default) means that the
-first trial is automatically determined as
-the earliest where all factors in <cite>factors</cite>
-have a level for the trial and preceding <cite>width-1</cite> trials;
-if <cite>start</cite> combined with <cite>width</cite>
-means that factors in <cite>factors</cite> will not
-have a level for some trials, then <cite>predicate</cite> must handle
-<cite>None</cite> values for the corresponding dictionaries and keys</p></li>
+<li><p><strong>mean</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – The mean of the underlying normal distribution.</p></li>
+<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – The standard deviation of the underlying normal distribution. Must be greater than zero.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Derivation" title="sweetpea.Derivation">Derivation</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Distribution" title="sweetpea.Distribution">Distribution</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sweetpea.CustomDistribution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">CustomDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dependents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.CustomDistribution" title="Link to this definition"></a></dt>
+<dd><p>Represents a custom distribution for <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>,
+where values are generated through calling a custom function, <cite>func</cite>.</p>
+<p><a class="reference internal" href="#sweetpea.CustomDistribution" title="sweetpea.CustomDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomDistribution</span></code></a> can also accept an optional argument
+<cite>dependents</cite>, which is the list of factors the current
+<a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> depends on. <cite>dependents</cite> can only contain
+<a class="reference internal" href="factors.html#sweetpea.DiscreteFactor" title="sweetpea.DiscreteFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiscreteFactor</span></code></a> or <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> in the design.</p>
+<p>When <cite>dependents</cite> is empty, the <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> is
+a <em>non-derived factor</em> and <cite>func</cite> should not require additional
+inputs to generate values.</p>
+<p>When <cite>dependents</cite> is not empty, the <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> becomes
+a <em>derived factor</em>. In such cases, <cite>func</cite> requires additional inputs
+to generate values. Since the values of the dependent factors are not known
+when intializing <a class="reference internal" href="#sweetpea.CustomDistribution" title="sweetpea.CustomDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomDistribution</span></code></a>, the values of these factors,
+<cite>factor_values</cite>, need to be passed to <cite>func</cite> at runtime. See
+<a class="reference internal" href="#sweetpea.CustomDistribution.sample" title="sweetpea.CustomDistribution.sample"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CustomDistribution.sample()</span></code></a> for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>Callable</em>) – A custom function to generate values.</p></li>
+<li><p><strong>dependents</strong> (<em>List</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – A list of factors that <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> depends on.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Distribution" title="sweetpea.Distribution">Distribution</a></p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sweetpea.CustomDistribution.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.CustomDistribution.sample" title="Link to this definition"></a></dt>
+<dd><p>Generate values using the custom <cite>func</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>factor_values</strong> (<em>List</em><em>[</em><em>Any</em><em>]</em>) – optional factor values when <cite>dependents</cite> is not empty
+for <a class="reference internal" href="#sweetpea.CustomDistribution" title="sweetpea.CustomDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomDistribution</span></code></a>. The size of
+<cite>factor_values</cite> must be the same as <cite>dependents</cite>.
+<cite>factor_values</cite> contains values for factors in
+<cite>dependents</cite> at runtime.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a value generated by calling <cite>func</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -370,8 +392,7 @@ have a level for some trials, then <cite>predicate</cite> must handle
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="factors.html" class="btn btn-neutral float-left" title="Factors and Levels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="constraints.html" class="btn btn-neutral float-right" title="Constraints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sampling_strategies.html" class="btn btn-neutral float-left" title="Sampling Strategies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Search &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
   
@@ -81,6 +81,11 @@
 <li class="toctree-l4"><a class="reference internal" href="guide/usage.html#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="guide/usage.html#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="guide/contributing.html">Contributing to SweetPea</a><ul>
@@ -148,6 +153,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/factors.html#sweetpea.ContinuousFactor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/factors.html#sweetpea.ContinuousFactor.generate"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/factors.html#sweetpea.DiscreteFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.DiscreteFactor</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/derivations.html">Derivations</a><ul>
@@ -166,6 +177,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/sampling_strategies.html">Sampling Strategies</a><ul>
@@ -178,6 +190,21 @@
 <li class="toctree-l3"><a class="reference internal" href="api/sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/sampling_strategies.html#sweetpea.SMGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.SMGen</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/distributions.html">Distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/distributions.html#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/distributions.html#sweetpea.Distribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution.sample()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/distributions.html#sweetpea.UniformDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/distributions.html#sweetpea.GaussianDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.GaussianDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/distributions.html#sweetpea.ExponentialDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExponentialDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/distributions.html#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

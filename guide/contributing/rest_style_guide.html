@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>reStructuredText Style Guide &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
 
   
@@ -81,6 +81,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../usage.html#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usage.html#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../contributing.html">Contributing to SweetPea</a><ul class="current">
@@ -148,6 +153,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.DiscreteFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.DiscreteFactor</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/derivations.html">Derivations</a><ul>
@@ -166,6 +173,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/sampling_strategies.html">Sampling Strategies</a><ul>
@@ -177,6 +185,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.SMGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.SMGen</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/distributions.html">Distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.UniformDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.GaussianDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.GaussianDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.ExponentialDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExponentialDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -388,7 +406,7 @@ use in the Python code.</p>
 <p>Python docstrings are triple-quoted strings that are inserted immediately
 <em>after</em> the construct they document. For example, if we wanted to document a
 function <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Type1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="n">Type2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReturnType</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Type1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="n">Type2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReturnType</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the result of fooing ``arg1`` with ``arg2``.</span>
 
 <span class="sd">    :param arg1:</span>
@@ -411,7 +429,7 @@ in a line.</p>
 <p>Function docstrings should be written in the present tense with active voice,
 giving the function agency. For example, a function that adds two numbers might
 be documented as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">lhs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">lhs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds ``lhs`` to ``rhs`` and returns the result.</span>
 
 <span class="sd">    .. note::</span>
@@ -471,7 +489,7 @@ describe what an abstract instance of that class is for. Note that the rules for
 placing the closing triple quote are the same as those for <a class="reference internal" href="#rest-style-guide-functions"><span class="std std-ref">functions</span></a>.</p>
 <p>Class docstrings should be written in place of docstrings on <code class="docutils literal notranslate"><span class="pre">__init__</span></code>
 methods, because many classes are written <em>without</em> an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> (such as
-those made with <a class="reference external" href="https://docs.python.org/3.7/library/dataclasses.html#dataclasses.dataclass" title="(in Python v3.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">dataclasses.dataclass()</span></code></a>). The class docstrings should
+those made with <a class="reference external" href="https://docs.python.org/3.9/library/dataclasses.html#dataclasses.dataclass" title="(in Python v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">dataclasses.dataclass()</span></code></a>). The class docstrings should
 document all of the parameters to the initialization process, including
 <code class="xref py py-class docutils literal notranslate"><span class="pre">InitVars</span></code> and the like.</p>
 <p>Unlike docstrings for functions, class docstrings should <em>always</em> be followed by
@@ -482,11 +500,11 @@ an empty line.</p>
 documented.</p>
 <p>Fields cannot be documented with docstrings, and instead are documented with a
 modified form of the Python line comment using <code class="docutils literal notranslate"><span class="pre">#:</span></code> instead of <code class="docutils literal notranslate"><span class="pre">#</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
 
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">FieldExample</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FieldExample</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An example for documenting a field.</span>
 
 <span class="sd">    :param field:</span>
@@ -505,11 +523,11 @@ documentation correctly.</p>
 <p>If a field is overriding some default value set by a superclass, the child
 class’s field does not necessarily need to be documented. Consider the following
 example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
 
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Parent</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The parent class in this example.</span>
 
 <span class="sd">    :param field:</span>
@@ -522,7 +540,7 @@ example:</p>
 
 
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The child class in this example. Note that the :attr:`.field` field</span>
 <span class="sd">    does not have a ``#:`` reST comment accompanying it.</span>
 

@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Constraints &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
   
@@ -81,6 +81,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../guide/usage.html#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/contributing.html">Contributing to SweetPea</a><ul>
@@ -148,6 +153,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.ContinuousFactor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="factors.html#sweetpea.ContinuousFactor.generate"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="factors.html#sweetpea.DiscreteFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.DiscreteFactor</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="derivations.html">Derivations</a><ul>
@@ -166,6 +177,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a><ul>
@@ -177,6 +189,22 @@
 <li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling_strategies.html#sweetpea.SMGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.SMGen</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="distributions.html">Distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="distributions.html#sweetpea.Distribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution.sample()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.UniformDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.GaussianDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.GaussianDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.ExponentialDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExponentialDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="distributions.html#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -248,7 +276,7 @@ experiment will have no satisfying trial sequences.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>index</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – a trial index, counting forward from 0 or backward from -1</p></li>
+<li><p><strong>index</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – a trial index, counting forward from 0 or backward from -1</p></li>
 <li><p><strong>level</strong> (<em>Union</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>]</em><em>]</em>) – either a level,
 a tuple containing a factor and the name of one of its levels,
 or a tuple containing a factor and one of its levels</p></li>
@@ -268,7 +296,7 @@ minimum trials. See <a class="reference internal" href="main.html#sweetpea.Cross
 <a class="reference internal" href="main.html#sweetpea.Repeat" title="sweetpea.Repeat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repeat</span></code></a> for more information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – minimum number of trials</p>
+<dd class="field-odd"><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – minimum number of trials</p>
 </dd>
 </dl>
 </dd></dl>
@@ -282,7 +310,7 @@ consecutive trials with the level identified by
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the maximum number of consecutive repetitions
+<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – the maximum number of consecutive repetitions
 to allow</p></li>
 <li><p><strong>level</strong> (<em>Union</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>]</em><em>, </em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – either a level,
 a tuple containing a factor and the name of one of its levels,
@@ -306,7 +334,7 @@ also appears in at least <cite>k</cite>-1 adjacent trials.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the minimum number of consecutive repetitions
+<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – the minimum number of consecutive repetitions
 to require</p></li>
 <li><p><strong>level</strong> (<em>Union</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>]</em><em>, </em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – like <a class="reference internal" href="#sweetpea.AtMostKInARow" title="sweetpea.AtMostKInARow"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtMostKInARow</span></code></a></p></li>
 </ul>
@@ -326,7 +354,7 @@ appears in exactly <cite>k</cite>-1 adjacent trials.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the number of repetitions to require</p></li>
+<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – the number of repetitions to require</p></li>
 <li><p><strong>level</strong> (<em>Union</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>]</em><em>, </em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – like <a class="reference internal" href="#sweetpea.AtMostKInARow" title="sweetpea.AtMostKInARow"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtMostKInARow</span></code></a></p></li>
 </ul>
 </dd>
@@ -347,8 +375,34 @@ sequences.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the number of repetitions to require</p></li>
+<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – the number of repetitions to require</p></li>
 <li><p><strong>level</strong> (<em>Union</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><em>Any</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><a class="reference internal" href="factors.html#sweetpea.Level" title="sweetpea.Level"><em>Level</em></a><em>]</em><em>, </em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – like <a class="reference internal" href="#sweetpea.AtMostKInARow" title="sweetpea.AtMostKInARow"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtMostKInARow</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#sweetpea.Constraint" title="sweetpea.Constraint">Constraint</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sweetpea.ConstinuousConstraint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">ConstinuousConstraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.ConstinuousConstraint" title="Link to this definition"></a></dt>
+<dd><p>Constrains <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> in an experiment so that
+the samples generated for these factors meet the proposed
+constraint function. Since such constraints only apply to
+factors with continuous sampling functions that
+should not be included in the crossing, the experiment will
+sample these factors until the constraints are met after
+the trial sequences have been satified for discrete factors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>factors</strong> (<em>List</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><em>ContinuousFactor</em></a><em>]</em>) – the factors to add constraints on</p></li>
+<li><p><strong>predicate</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>, </em><em>...</em><em>]</em><em>, </em><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>]</em>) – a constraint function takes <cite>factors</cite>
+initialized with sampling function.
+The function should return true if the
+combination of factors meet the constraints.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>

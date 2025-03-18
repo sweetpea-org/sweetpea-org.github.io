@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using SweetPea &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
   
@@ -82,6 +82,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html">Contributing to SweetPea</a><ul>
@@ -149,6 +154,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor.generate"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.DiscreteFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.DiscreteFactor</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/derivations.html">Derivations</a><ul>
@@ -167,6 +178,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/sampling_strategies.html">Sampling Strategies</a><ul>
@@ -178,6 +190,22 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/sampling_strategies.html#sweetpea.SMGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.SMGen</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/distributions.html">Distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/distributions.html#sweetpea.Distribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution.sample()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.UniformDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.GaussianDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.GaussianDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.ExponentialDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExponentialDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -288,7 +316,7 @@ language forms:</p>
 <li><p><a class="reference internal" href="../api/main.html#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> — synthesizes trial sequences</p></li>
 </ul>
 <p>To put it together, we do:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">color</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">([</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">],</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">],</span> <span class="p">[])</span>
@@ -299,7 +327,7 @@ language forms:</p>
 the output will not be the same every time. However, when we ran the code to
 write this tutorial, we saw the following output (your output should look
 similar, though probably not identical):</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">print_experiments</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_experiments</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
 <span class="go">1 trial sequences found.</span>
 <span class="go">Experiment 0:</span>
@@ -322,7 +350,7 @@ of synthesis.</p>
 <p>We generated a <em>fully-crossed experiment</em>: all possible color-text pairs were
 generated, though their order was randomized. We can see this by sorting a
 simplified representation of the experiment:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">experiments_to_tuples</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">experiments_to_tuples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># We immediately access the first element of the returned list.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># This is because we only generated one trial run.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simple</span> <span class="o">=</span> <span class="n">experiments_to_tuples</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -364,7 +392,7 @@ those levels are not instances of the <a class="reference internal" href="../api
 automatically convert them into instances of <a class="reference internal" href="../api/factors.html#sweetpea.Level" title="sweetpea.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a>.</p>
 <p>To put all this information together: you can create a simple factor composed of
 simple levels by just using the <a class="reference internal" href="../api/factors.html#sweetpea.Factor" title="sweetpea.Factor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factor</span></code></a> initializer:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">Factor</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;factor_name&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">factor</span><span class="o">.</span><span class="n">levels</span><span class="p">)</span>
 <span class="go">4</span>
@@ -401,7 +429,7 @@ used to create it:</p>
 design <a class="reference internal" href="../api/main.html#sweetpea.Block" title="sweetpea.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a> using one of the appropriate functions. We showed how it
 looks to use <code class="xref py py-func docutils literal notranslate"><span class="pre">fully_cross_block()</span></code> in our simple example above. The
 function takes a number of arguments, but in the simplest case you need only do:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">fully_cross_block</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">fully_cross_block</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;f2&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">fully_cross_block</span><span class="p">([</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">],</span> <span class="p">[</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">],</span> <span class="p">[])</span>
@@ -416,10 +444,9 @@ of your factors as both the <code class="docutils literal notranslate"><span cla
 <h4>Trial Synthesis<a class="headerlink" href="#trial-synthesis" title="Link to this heading"></a></h4>
 <p>Once you have a complete experimental design in the form of a <a class="reference internal" href="../api/main.html#sweetpea.Block" title="sweetpea.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a>,
 you’re ready to use it to synthesize trials. In the above example, we used the
-<code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials_non_uniform()</span></code>, which conducts non-uniform SAT-sampling
-to synthesize the trials. Uniform sampling is tricky and still a work in
-progress, but there does exist a function that tries to accomplish it:
-<code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials_uniform()</span></code>.</p>
+<a class="reference internal" href="../api/main.html#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> with the default parameter <cite>sampling_strategy</cite> as
+<a class="reference internal" href="../api/sampling_strategies.html#sweetpea.IterateGen" title="sweetpea.IterateGen"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterateGen</span></code></a>, which conducts non-uniform SAT-sampling to synthesize
+the trials.</p>
 </section>
 </section>
 </section>
@@ -440,17 +467,17 @@ determined by the same trial’s <code class="docutils literal notranslate"><spa
 <code class="docutils literal notranslate"><span class="pre">congruency</span></code> is <code class="docutils literal notranslate"><span class="pre">congruent</span></code>. Otherwise, the trial is <code class="docutils literal notranslate"><span class="pre">incongruent</span></code>.</p>
 <p>Let’s create the <code class="docutils literal notranslate"><span class="pre">congruency</span></code> factor now. We start by recreating the <code class="docutils literal notranslate"><span class="pre">color</span></code>
 and <code class="docutils literal notranslate"><span class="pre">text</span></code> simple factors from before:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">Factor</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">Factor</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">color</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Next, we need to define the predicate functions that will be used to determine
 whether a color-text pair is congruent.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">congruent</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">congruent</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">color</span> <span class="o">==</span> <span class="n">word</span>
 <span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">incongruent</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">incongruent</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="ow">not</span> <span class="n">congruent</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
 <span class="gp">...</span>
 </pre></div>
@@ -461,7 +488,7 @@ instances must be manually instantiated. <a class="reference internal" href="../
 also require a <em>derivation window</em> as an argument. We will discuss this more
 in-depth in a little bit, so for now just trust us that we want to use the
 <a class="reference internal" href="../api/derivations.html#sweetpea.WithinTrial" title="sweetpea.WithinTrial"><code class="xref py py-class docutils literal notranslate"><span class="pre">WithinTrial</span></code></a> for this particular job:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">DerivedLevel</span><span class="p">,</span> <span class="n">WithinTrial</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">DerivedLevel</span><span class="p">,</span> <span class="n">WithinTrial</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">con_level</span> <span class="o">=</span> <span class="n">DerivedLevel</span><span class="p">(</span><span class="s2">&quot;congruent&quot;</span><span class="p">,</span> <span class="n">WithinTrial</span><span class="p">(</span><span class="n">congruent</span><span class="p">,</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inc_level</span> <span class="o">=</span> <span class="n">DerivedLevel</span><span class="p">(</span><span class="s2">&quot;incongruent&quot;</span><span class="p">,</span> <span class="n">WithinTrial</span><span class="p">(</span><span class="n">incongruent</span><span class="p">,</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">]))</span>
 </pre></div>
@@ -523,7 +550,7 @@ crossing will be a random arrangement of the following trials:</p>
 </table>
 <p>We can verify this by using the <a class="reference internal" href="../api/main.html#sweetpea.experiments_to_tuples" title="sweetpea.experiments_to_tuples"><code class="xref py py-func docutils literal notranslate"><span class="pre">experiments_to_tuples()</span></code></a> function on the
 result of synthesizing one trial run from this design:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span> <span class="n">experiments_to_tuples</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span> <span class="n">experiments_to_tuples</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">design</span> <span class="o">=</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">congruency</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">crossing</span> <span class="o">=</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">crossing</span><span class="p">,</span> <span class="p">[])</span>
@@ -555,7 +582,7 @@ are six <code class="docutils literal notranslate"><span class="pre">incongruent
 <code class="docutils literal notranslate"><span class="pre">incongruent</span></code> trials may appear in a row. This will be accomplished using the
 <a class="reference internal" href="../api/constraints.html#sweetpea.AtMostKInARow" title="sweetpea.AtMostKInARow"><code class="xref py py-func docutils literal notranslate"><span class="pre">AtMostKInARow()</span></code></a> function.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># We resume from the previous session.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sweetpea</span> <span class="kn">import</span> <span class="n">AtMostKInARow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">AtMostKInARow</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">congruency_constraint</span> <span class="o">=</span> <span class="n">AtMostKInARow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">congruency</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">crossing</span><span class="p">,</span> <span class="p">[</span><span class="n">congruency_constraint</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -603,6 +630,81 @@ experiment is <code class="docutils literal notranslate"><span class="pre">incon
 are also <code class="docutils literal notranslate"><span class="pre">incongruent</span></code>. This adds up to three consecutive trials! But this
 behavior is expected. The <a class="reference internal" href="../api/constraints.html#sweetpea.AtMostKInARow" title="sweetpea.AtMostKInARow"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtMostKInARow</span></code></a>
 constraint only looks <em>within</em> a given experiment, not across experiments.</p>
+</section>
+</section>
+<section id="continuousfactor-in-sweetpea">
+<h2>ContinuousFactor in SweetPea<a class="headerlink" href="#continuousfactor-in-sweetpea" title="Link to this heading"></a></h2>
+<p>In addition to factors with discrete levels, SweetPea also supports a
+<a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>, which can be initialized using a <cite>distribution</cite>.
+Unlike discrete factors, <code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code> allows
+sampling values dynamically at runtime based on the pre-defined distribution.</p>
+<section id="defining-continuousfactor">
+<h3>Defining ContinuousFactor<a class="headerlink" href="#defining-continuousfactor" title="Link to this heading"></a></h3>
+<p>A <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> uses an input distribution to sample values at runtime.
+It does not have the finite number of levels as other factors.
+As a result, such factors can only be added to the design of the block
+instead of the crossing. The crossing needs to consist of factor(s) with finite levels.</p>
+<p>To use <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>, we import and use the following SweetPea language forms:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> — constructs continuous factors with a distribution</p></li>
+</ul>
+<p>To put it together, we do:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span>\
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">,</span> <span class="n">ContinuousFactor</span><span class="p">,</span> <span class="n">CustomDistribution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">sample_continuous</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response_time</span> <span class="o">=</span> <span class="n">ContinuousFactor</span><span class="p">(</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="p">[],</span>\
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span><span class="o">=</span><span class="n">CustomDistribution</span><span class="p">(</span><span class="n">sample_continuous</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">factor_for_crossing</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">([</span><span class="n">factor_for_crossing</span><span class="p">,</span> <span class="n">response_time</span><span class="p">],</span> <span class="p">[</span><span class="n">factor_for_crossing</span><span class="p">],</span> <span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using NonUniformGen.</span>
+<span class="go">Encoding experiment constraints...</span>
+<span class="go">Running CryptoMiniSat...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">color blue  | response_time 0.9695361854047209</span>
+<span class="go">color red   | response_time 1.2529270082663353</span>
+<span class="go">color green | response_time 1.4106548040758589</span>
+</pre></div>
+</div>
+</section>
+<section id="constraints-for-design-with-continuousfactors">
+<h3>Constraints for Design with ContinuousFactors<a class="headerlink" href="#constraints-for-design-with-continuousfactors" title="Link to this heading"></a></h3>
+<p>When designing an experiment using <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>, you can
+also impose some constraints on the factor.</p>
+<p>Let’s say we look at the above list of trials and decide “we should ensure
+that the <code class="docutils literal notranslate"><span class="pre">response_time</span></code> should be less than 1.”</p>
+<p>In that case, we can add <a class="reference internal" href="../api/constraints.html#sweetpea.ConstinuousConstraint" title="sweetpea.ConstinuousConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConstinuousConstraint</span></code></a> to achieve that.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span>\
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">,</span> <span class="n">ConstinuousConstraint</span><span class="p">,</span> <span class="n">ContinuousFactor</span><span class="p">,</span> <span class="n">CustomDistribution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">sample_continuous</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response_time</span> <span class="o">=</span> <span class="n">ContinuousFactor</span><span class="p">(</span><span class="s2">&quot;response_time&quot;</span><span class="p">,</span> <span class="p">[],</span>\
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span><span class="o">=</span><span class="n">CustomDistribution</span><span class="p">(</span><span class="n">sample_continuous</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">factor_for_crossing</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">less_than_one</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cc</span> <span class="o">=</span> <span class="n">ConstinuousConstraint</span><span class="p">([</span><span class="n">response_time</span><span class="p">],</span> <span class="n">less_than_one</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">([</span><span class="n">factor_for_crossing</span><span class="p">,</span> <span class="n">response_time</span><span class="p">],</span> <span class="p">[</span><span class="n">factor_for_crossing</span><span class="p">],</span> <span class="p">[</span><span class="n">cc</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using NonUniformGen.</span>
+<span class="go">Encoding experiment constraints...</span>
+<span class="go">Running CryptoMiniSat...</span>
+<span class="go">Trial: 0, Sampling count to meet continuous constraints: 6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">color blue  | response_time 0.5357413769177958</span>
+<span class="go">color red   | response_time 0.9859899610573284</span>
+<span class="go">color green | response_time 0.5929666932777036</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>

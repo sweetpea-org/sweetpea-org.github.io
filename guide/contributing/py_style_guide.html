@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python Style Guide &mdash; SweetPea  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
 
   
@@ -81,6 +81,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../usage.html#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usage.html#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../contributing.html">Contributing to SweetPea</a><ul class="current">
@@ -148,6 +153,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/factors.html#sweetpea.DiscreteFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.DiscreteFactor</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/derivations.html">Derivations</a><ul>
@@ -166,6 +173,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../api/sampling_strategies.html">Sampling Strategies</a><ul>
@@ -177,6 +185,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.RandomGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.RandomGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateSATGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateSATGen</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.IterateILPGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.IterateILPGen</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/sampling_strategies.html#sweetpea.SMGen"><code class="docutils literal notranslate"><span class="pre">sweetpea.SMGen</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/distributions.html">Distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.UniformDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.GaussianDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.GaussianDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.ExponentialDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExponentialDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -265,20 +283,20 @@ the same section, separated by a blank line.</p></li>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;This module does some neat things.&quot;&quot;&quot;</span>
 
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Export1&#39;</span><span class="p">,</span> <span class="s1">&#39;Export2&#39;</span><span class="p">]</span>
 
 
-<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 
-<span class="kn">from</span> <span class="nn">my_package.core_stuff</span> <span class="kn">import</span> <span class="n">CoreThing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">my_package.core_stuff</span><span class="w"> </span><span class="kn">import</span> <span class="n">CoreThing</span>
 </pre></div>
 </div>
 <p>(Where <code class="docutils literal notranslate"><span class="pre">my_package</span></code> is the module in which this code appears.)</p>
@@ -324,7 +342,7 @@ information to a static type-checker or a linter.</p>
 strings that adorn functions, classes, and modules. There are extra rules about
 docstrings, found in <a class="reference internal" href="rest_style_guide.html#rest-style-guide"><span class="std std-ref">the reST style guide</span></a>.</p>
 <p>To put all these into an example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Type1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="n">Type2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReturnType</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">some_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="n">Type1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="n">Type2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReturnType</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This is the *docstring* that documents the :func:`.some_function`</span>
 <span class="sd">    function.</span>
 
@@ -365,7 +383,7 @@ given name by doing <code class="docutils literal notranslate"><span class="pre"
 on the preceding line explaining why the check was disabled. This should usually
 point to a documented issue to support the choice.</p>
 <p>For example, the two subclasses of <a class="reference internal" href="../../api/factors.html#sweetpea.Level" title="sweetpea.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a> (<code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleLevel</span></code> and
-<a class="reference internal" href="../../api/factors.html#sweetpea.DerivedLevel" title="sweetpea.DerivedLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedLevel</span></code></a>) override the <a class="reference external" href="https://docs.python.org/3.7/library/dataclasses.html#module-dataclasses" title="(in Python v3.7)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code></a>-implemented
+<a class="reference internal" href="../../api/factors.html#sweetpea.DerivedLevel" title="sweetpea.DerivedLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedLevel</span></code></a>) override the <a class="reference external" href="https://docs.python.org/3.9/library/dataclasses.html#module-dataclasses" title="(in Python v3.9)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code></a>-implemented
 <code class="docutils literal notranslate"><span class="pre">__post_init__</span></code> methods with signatures that deviate from that of the base
 <a class="reference internal" href="../../api/factors.html#sweetpea.Level" title="sweetpea.Level"><code class="xref py py-class docutils literal notranslate"><span class="pre">Level</span></code></a> class. This is usually disallowed by the <a class="reference external" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov Substitution
 Principle</a>, which
@@ -375,7 +393,7 @@ and, in fact, necessary, so we had to disable type-checking and linting on those
 lines. The <code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleLevel</span></code> definition looks like this, as of this writing
 (with some unimportant parts abridged for clarity):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">SimpleLevel</span><span class="p">(</span><span class="n">Level</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SimpleLevel</span><span class="p">(</span><span class="n">Level</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;... (Docstring removed for this example.)&quot;&quot;&quot;</span>
 
     <span class="n">weight</span><span class="p">:</span> <span class="n">InitVar</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -384,7 +402,7 @@ lines. The <code class="xref py py-class docutils literal notranslate"><span cla
     <span class="c1">#       Liskov substitution property. This is addressed in</span>
     <span class="c1">#       python/mypy#9254:</span>
     <span class="c1">#           https://github.com/python/mypy/issues/9254</span>
-    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># type: ignore # pylint: disable=arguments-differ</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># type: ignore # pylint: disable=arguments-differ</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_weight</span> <span class="o">=</span> <span class="n">weight</span>
 </pre></div>
