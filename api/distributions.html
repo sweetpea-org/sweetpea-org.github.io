@@ -64,6 +64,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../guide/factorial_design.html#within-trial-windows">Within-Trial Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guide/factorial_design.html#transition-windows">Transition Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guide/factorial_design.html#general-windows">General Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/factorial_design.html#continuousfactor-windows">ContinuousFactor Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/factorial_design.html#glossary">Glossary</a></li>
@@ -80,8 +81,15 @@
 <li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../guide/usage.html#working-with-multiple-crossings">Working With Multiple Crossings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#defining-multicrossblock">Defining MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#crossing-sizes-in-multicrossblock">Crossing Sizes in MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#preamble-trials-in-multicrossblock">Preamble Trials in MultiCrossBlock</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/usage.html#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#windows-for-continuousfactor">Windows for ContinuousFactor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
 </ul>
 </li>
@@ -136,6 +144,8 @@
 <li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.RepeatMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.RepeatMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#sweetpea.AlignmentMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.AlignmentMode</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="factors.html">Factors and Levels</a><ul>
@@ -165,6 +175,7 @@
 <li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.ContinuousFactorWindow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactorWindow</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a><ul>
@@ -176,7 +187,7 @@
 <li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ContinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a><ul>
@@ -202,6 +213,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sweetpea.CustomDistribution.reset"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.reset()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -336,7 +348,7 @@ where values are sampled according to the specified <cite>mean</cite> and <cite>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.CustomDistribution">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">CustomDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dependents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.CustomDistribution" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">CustomDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dependents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cumulative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.CustomDistribution" title="Link to this definition"></a></dt>
 <dd><p>Represents a custom distribution for <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>,
 where values are generated through calling a custom function, <cite>func</cite>.</p>
 <p><a class="reference internal" href="#sweetpea.CustomDistribution" title="sweetpea.CustomDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomDistribution</span></code></a> can also accept an optional argument
@@ -352,11 +364,16 @@ to generate values. Since the values of the dependent factors are not known
 when intializing <a class="reference internal" href="#sweetpea.CustomDistribution" title="sweetpea.CustomDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomDistribution</span></code></a>, the values of these factors,
 <cite>factor_values</cite>, need to be passed to <cite>func</cite> at runtime. See
 <a class="reference internal" href="#sweetpea.CustomDistribution.sample" title="sweetpea.CustomDistribution.sample"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CustomDistribution.sample()</span></code></a> for more details.</p>
+<p>Optionally, the argument <cite>cumulative</cite> can be set to <cite>True</cite> to enable accumulation.
+In this mode, the return value of each <cite>func</cite> call is added to a running sum,
+and that sum is returned instead of the raw result. The running sum can be
+reset between experiments or blocks by calling <a class="reference internal" href="#sweetpea.CustomDistribution.reset" title="sweetpea.CustomDistribution.reset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>Callable</em>) – A custom function to generate values.</p></li>
 <li><p><strong>dependents</strong> (<em>List</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>]</em>) – A list of factors that <a class="reference internal" href="factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> depends on.</p></li>
+<li><p><strong>cumulative</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether the distribution should return cumulative results.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -382,6 +399,14 @@ for <a class="reference internal" href="#sweetpea.CustomDistribution" title="swe
 <dd class="field-odd"><p>Any</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sweetpea.CustomDistribution.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.CustomDistribution.reset" title="Link to this definition"></a></dt>
+<dd><p>Resets the cumulative sum used when <cite>cumulative=True</cite>.
+This is typically called at the start of a new experiment
+or trial sequence to prevent carryover.</p>
 </dd></dl>
 
 </dd></dl>

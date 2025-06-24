@@ -65,6 +65,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../guide/factorial_design.html#within-trial-windows">Within-Trial Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guide/factorial_design.html#transition-windows">Transition Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guide/factorial_design.html#general-windows">General Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/factorial_design.html#continuousfactor-windows">ContinuousFactor Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/factorial_design.html#glossary">Glossary</a></li>
@@ -81,8 +82,15 @@
 <li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../guide/usage.html#working-with-multiple-crossings">Working With Multiple Crossings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#defining-multicrossblock">Defining MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#crossing-sizes-in-multicrossblock">Crossing Sizes in MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#preamble-trials-in-multicrossblock">Preamble Trials in MultiCrossBlock</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/usage.html#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#windows-for-continuousfactor">Windows for ContinuousFactor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
 </ul>
 </li>
@@ -137,6 +145,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.RepeatMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.RepeatMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.AlignmentMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.AlignmentMode</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="factors.html">Factors and Levels</a><ul>
@@ -166,6 +176,7 @@
 <li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="derivations.html#sweetpea.ContinuousFactorWindow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactorWindow</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="constraints.html">Constraints</a><ul>
@@ -177,7 +188,7 @@
 <li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html#sweetpea.ContinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sampling_strategies.html">Sampling Strategies</a><ul>
@@ -203,6 +214,7 @@
 <li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="distributions.html#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="distributions.html#sweetpea.CustomDistribution.reset"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.reset()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -339,7 +351,7 @@ an <a class="reference internal" href="constraints.html#sweetpea.Exclude" title=
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sweetpea.MultiCrossBlock">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">MultiCrossBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_complete_crossing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.MultiCrossBlock" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">MultiCrossBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_complete_crossing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">RepeatMode.EQUAL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">AlignmentMode.EQUAL_PREAMBLE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.MultiCrossBlock" title="Link to this definition"></a></dt>
 <dd><p>Creates an experiment description as a block of trials based on
 multiple crossings.</p>
 <p>The <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a> class generalizes
@@ -349,14 +361,33 @@ multiple crossings.</p>
 instance is also a <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a> instance.</p>
 <p>The number of trials in each generated sequence for the experiment
 is determined by the <em>maximum</em> of number that would be determined
-by an individual crossing in <cite>crossings</cite>.</p>
-<p>Every combination of levels in each individual crossing in
-<cite>crossings</cite> appears at least once within that crossing’s size.
-Smaller crossing sizes lead to replications of that crossing to
-meet the number of trials required for larger crossings. At the
-same time, different crossings in <cite>crossings</cite> can refer to the same
+by an individual crossing in <cite>crossings</cite>, and every combination
+of levels in each individual crossing in <cite>crossings</cite> appears at
+least once within that crossing’s size.</p>
+<p>When a crossing’s size S is smaller than the number of trials T to
+be generated (as determined by another crossing whose size is
+larger than S), the crossing’s combinations are replicated using
+the smallest multiple N such that so that S * N &gt;= T. If S * N &gt;
+T, then only the first T generated combinations will be used.
+There are two possible strategies for replicating a crossing, and
+<cite>mode</cite> selects between them. <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.WEIGHT</span></code> weights
+combinations, so that up to N instances of a combination can
+appear anywhere in the T trials. <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.REPEAT</span></code> ensures that
+each of the S combinations appears once in the first S trials,
+then once again in the next S trials, and so on, up to N times.
+An example illustrating the difference of these two strategies is shown in
+<a class="reference internal" href="../guide/usage.html#working-with-multiple-crossings-example"><span class="std std-ref">Crossing Sizes in MultiCrossBlock</span></a> section.</p>
+<p>At the same time, different crossings in <cite>crossings</cite> can refer to the same
 factors, which creates constraints on how factor levels are chosen
 across crossings in a given trial.</p>
+<p>In addition, each crossing in <cite>crossings</cite> could require different number of preamble trials
+because of derived factors with varying window sizes in the crossing,
+the <cite>alignment</cite> parameter controls how crossings are aligned.
+Use <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.POST_PREAMBLE</span></code> to start all crossings after the unified preamble
+trials, or <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.PARALLEL_START</span></code> to start individual crossing from
+its own required preamble trials.
+An example illustrating the difference of these two strategies is shown in
+<a class="reference internal" href="../guide/usage.html#preamble-trials-multiple-crossings-example"><span class="std std-ref">Preamble Trials in MultiCrossBlock</span></a> section.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -367,7 +398,27 @@ block’s trials; the factors in each crossing must
 be a subset of the <cite>design</cite> list</p></li>
 <li><p><strong>constraints</strong> (<em>List</em><em>[</em><a class="reference internal" href="constraints.html#sweetpea.Constraint" title="sweetpea.Constraint"><em>Constraint</em></a><em>]</em>) – constraints that every sequence of trials must
 satify; see <a class="reference internal" href="constraints.html#constraints"><span class="std std-ref">Constraints</span></a></p></li>
-<li><p><strong>require_complete_crossing</strong> – same as for <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a></p></li>
+<li><p><strong>require_complete_crossing</strong> – same as for <a class="reference internal" href="#sweetpea.CrossBlock" title="sweetpea.CrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossBlock</span></code></a></p></li>
+<li><p><strong>mode</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference internal" href="#sweetpea.RepeatMode" title="sweetpea.RepeatMode"><em>RepeatMode</em></a><em>]</em>) – determines the strategy for <a class="reference internal" href="#sweetpea.RepeatMode" title="sweetpea.RepeatMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeatMode</span></code></a>,
+whether to use <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.WEIGHT</span></code> OR <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.REPEAT</span></code>
+to generate additional trials for smaller crossings.
+Mode must be specified when crossing sizes are different.
+The default value is <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.EQUAL</span></code>, which suggests
+all crossings have equal crossing sizes. If <cite>str</cite> is provided instead of
+a <a class="reference internal" href="#sweetpea.RepeatMode" title="sweetpea.RepeatMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeatMode</span></code></a>, it will behave identically by mapping the string to
+the corresponding enum: ‘weight’ maps to <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.WEIGHT</span></code>,
+‘repeat’ maps to <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.REPEAT</span></code> and ‘equal’ maps to <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.EQUAL</span></code></p></li>
+<li><p><strong>alignment</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference internal" href="#sweetpea.AlignmentMode" title="sweetpea.AlignmentMode"><em>AlignmentMode</em></a><em>]</em>) – determines the strategy for <a class="reference internal" href="#sweetpea.AlignmentMode" title="sweetpea.AlignmentMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlignmentMode</span></code></a>,
+whether to use <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.PARALLEL_START</span></code> OR <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.POST_PREAMBLE</span></code>
+to align crossings with different preamble trials.
+Alignment must be specified when the number preamble trials is different
+for crossings because of window sizes of derived factors.
+The default value is <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.EQUAL_PREAMBLE</span></code>, which suggests
+the preamble trials are equal for all crossings. If <cite>str</cite> is provided instead of
+a <a class="reference internal" href="#sweetpea.AlignmentMode" title="sweetpea.AlignmentMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlignmentMode</span></code></a>, it will behave identically by mapping the string to
+the corresponding enum: ‘post preamble’ maps to <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.POST_PREAMBLE</span></code>,
+‘parallel start’ maps to <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.PARALLEL_START</span></code>, and
+‘equal preamble’ maps to <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.EQUAL_PREAMBLE</span></code>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -566,6 +617,50 @@ names of levels selected for one trial</p>
 <dd class="field-odd"><p>List[List[<a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>]]</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sweetpea.RepeatMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">RepeatMode</span></span><a class="headerlink" href="#sweetpea.RepeatMode" title="Link to this definition"></a></dt>
+<dd><p>Represents the strategies for generating additional trials
+when individual crossings in a design differ in size.
+The <a class="reference internal" href="#sweetpea.RepeatMode" title="sweetpea.RepeatMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeatMode</span></code></a> is used in <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a>
+to determine how to align the number of
+trials across multiple crossings. When crossings have different crossing sizes,
+additional trials must be added to ensure consistency across the design.</p>
+<p>There are three available modes:</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">EQUAL</span></code>: Indicates that all crossings are expected to have equal sizes,
+and no additional trials should be added. This is the default setting.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">REPEAT</span></code>: Repeats the smaller crossings enough times until they reach the
+required trial count to align with the trial count of larger crossings.
+Unlike scaling the weight of smaller crossing combinations,
+levels are selected for each replication of the crossing independently.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">WEIGHT</span></code>: Additional trials are added by scaling the weight of the smaller crossing
+combination to align with the trial count of larger crossings.
+Preamble trials are not scaled.</p></li>
+</ul>
+<p><a class="reference internal" href="#sweetpea.RepeatMode" title="sweetpea.RepeatMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeatMode</span></code></a> is typically not instantiated directly; instead, it is passed
+as a configuration value to <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sweetpea.AlignmentMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">AlignmentMode</span></span><a class="headerlink" href="#sweetpea.AlignmentMode" title="Link to this definition"></a></dt>
+<dd><p>Represents the strategies for aligning trials
+when individual crossings in a design differ preamble trials.
+The <a class="reference internal" href="#sweetpea.AlignmentMode" title="sweetpea.AlignmentMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlignmentMode</span></code></a> is used in <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a>
+to determine how to align the crossings with different preamble trials.</p>
+<p>There are three available modes:</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">EQUAL_PREAMBLE</span></code>: Indicates that the preamble trials are equal for all crossings.
+This is the default setting.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">POST_PREAMBLE</span></code>: Starts all crossings after the unified preamble trials. The crossing
+with the latest starting trial determines the unified preamble trials.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">PARALLEL_START</span></code>: Starts individual crossing based on its own required preamble trials.</p></li>
+</ul>
+<p><a class="reference internal" href="#sweetpea.AlignmentMode" title="sweetpea.AlignmentMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">AlignmentMode</span></code></a> is typically not instantiated directly; instead, it is passed
+as a configuration value to <a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a></p>
 </dd></dl>
 
 </section>

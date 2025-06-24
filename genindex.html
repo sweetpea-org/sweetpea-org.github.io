@@ -62,6 +62,7 @@
 <li class="toctree-l4"><a class="reference internal" href="guide/factorial_design.html#within-trial-windows">Within-Trial Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="guide/factorial_design.html#transition-windows">Transition Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="guide/factorial_design.html#general-windows">General Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide/factorial_design.html#continuousfactor-windows">ContinuousFactor Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="guide/factorial_design.html#glossary">Glossary</a></li>
@@ -78,8 +79,15 @@
 <li class="toctree-l4"><a class="reference internal" href="guide/usage.html#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="guide/usage.html#working-with-multiple-crossings">Working With Multiple Crossings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#defining-multicrossblock">Defining MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#crossing-sizes-in-multicrossblock">Crossing Sizes in MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#preamble-trials-in-multicrossblock">Preamble Trials in MultiCrossBlock</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="guide/usage.html#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="guide/usage.html#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#windows-for-continuousfactor">Windows for ContinuousFactor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="guide/usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
 </ul>
 </li>
@@ -134,6 +142,8 @@
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.RepeatMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.RepeatMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.AlignmentMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.AlignmentMode</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/factors.html">Factors and Levels</a><ul>
@@ -163,6 +173,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/derivations.html#sweetpea.ContinuousFactorWindow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactorWindow</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/constraints.html">Constraints</a><ul>
@@ -174,7 +185,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/constraints.html#sweetpea.ContinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/sampling_strategies.html">Sampling Strategies</a><ul>
@@ -200,6 +211,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/distributions.html#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/distributions.html#sweetpea.CustomDistribution.reset"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.reset()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -244,6 +256,7 @@
  | <a href="#L"><strong>L</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
  | <a href="#W"><strong>W</strong></a>
@@ -277,8 +290,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="guide/factorial_design.html#term-constraint"><strong>constraint</strong></a>
 </li>
+      <li><a href="guide/factorial_design.html#term-continuous-factor"><strong>continuous factor</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="guide/factorial_design.html#term-continuous-factor-window"><strong>continuous factor window</strong></a>
+</li>
       <li><a href="guide/factorial_design.html#term-crossing"><strong>crossing</strong></a>
 </li>
   </ul></td>
@@ -291,10 +308,12 @@
 </li>
       <li><a href="guide/factorial_design.html#term-derivation-window"><strong>derivation window</strong></a>
 </li>
-      <li><a href="guide/factorial_design.html#term-derivation-window-transition"><strong>derivation window, transition</strong></a>
+      <li><a href="guide/factorial_design.html#term-derivation-window-continuous-factor"><strong>derivation window, continuous factor</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="guide/factorial_design.html#term-derivation-window-transition"><strong>derivation window, transition</strong></a>
+</li>
       <li><a href="guide/factorial_design.html#term-derivation-window-within-trial"><strong>derivation window, within-trial</strong></a>
 </li>
       <li><a href="guide/factorial_design.html#term-derived-level"><strong>derived level</strong></a>
@@ -386,6 +405,14 @@
   </ul></td>
 </tr></table>
 
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/distributions.html#sweetpea.CustomDistribution.reset">reset() (sweetpea.CustomDistribution method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -395,6 +422,8 @@
         <li><a href="api/distributions.html#sweetpea.Distribution.sample">(sweetpea.Distribution method)</a>
 </li>
       </ul></li>
+      <li><a href="api/main.html#sweetpea.AlignmentMode">sweetpea.AlignmentMode (built-in class)</a>
+</li>
       <li><a href="api/constraints.html#sweetpea.AtLeastKInARow">sweetpea.AtLeastKInARow (built-in class)</a>
 </li>
       <li><a href="api/constraints.html#sweetpea.AtMostKInARow">sweetpea.AtMostKInARow (built-in class)</a>
@@ -403,11 +432,13 @@
 </li>
       <li><a href="api/sampling_strategies.html#sweetpea.CMSGen">sweetpea.CMSGen (built-in class)</a>
 </li>
-      <li><a href="api/constraints.html#sweetpea.ConstinuousConstraint">sweetpea.ConstinuousConstraint (built-in class)</a>
-</li>
       <li><a href="api/constraints.html#sweetpea.Constraint">sweetpea.Constraint (built-in class)</a>
 </li>
+      <li><a href="api/constraints.html#sweetpea.ContinuousConstraint">sweetpea.ContinuousConstraint (built-in class)</a>
+</li>
       <li><a href="api/factors.html#sweetpea.ContinuousFactor">sweetpea.ContinuousFactor (built-in class)</a>
+</li>
+      <li><a href="api/derivations.html#sweetpea.ContinuousFactorWindow">sweetpea.ContinuousFactorWindow (built-in class)</a>
 </li>
       <li><a href="api/main.html#sweetpea.CrossBlock">sweetpea.CrossBlock (built-in class)</a>
 </li>
@@ -447,10 +478,10 @@
 </li>
       <li><a href="api/factors.html#sweetpea.Factor">sweetpea.Factor (built-in class)</a>
 </li>
-      <li><a href="api/distributions.html#sweetpea.GaussianDistribution">sweetpea.GaussianDistribution (built-in class)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/distributions.html#sweetpea.GaussianDistribution">sweetpea.GaussianDistribution (built-in class)</a>
+</li>
       <li><a href="api/sampling_strategies.html#sweetpea.Gen">sweetpea.Gen (built-in class)</a>
 </li>
       <li><a href="api/sampling_strategies.html#sweetpea.IterateGen">sweetpea.IterateGen (built-in class)</a>
@@ -479,6 +510,8 @@
       <li><a href="api/sampling_strategies.html#sweetpea.RandomGen">sweetpea.RandomGen (built-in class)</a>
 </li>
       <li><a href="api/main.html#sweetpea.Repeat">sweetpea.Repeat (built-in class)</a>
+</li>
+      <li><a href="api/main.html#sweetpea.RepeatMode">sweetpea.RepeatMode (built-in class)</a>
 </li>
       <li>
     sweetpea.save_experiments_csv()

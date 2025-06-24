@@ -66,6 +66,7 @@
 <li class="toctree-l4"><a class="reference internal" href="factorial_design.html#within-trial-windows">Within-Trial Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="factorial_design.html#transition-windows">Transition Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="factorial_design.html#general-windows">General Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="factorial_design.html#continuousfactor-windows">ContinuousFactor Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="factorial_design.html#glossary">Glossary</a></li>
@@ -82,8 +83,15 @@
 <li class="toctree-l4"><a class="reference internal" href="#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-multiple-crossings">Working With Multiple Crossings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-multicrossblock">Defining MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crossing-sizes-in-multicrossblock">Crossing Sizes in MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preamble-trials-in-multicrossblock">Preamble Trials in MultiCrossBlock</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows-for-continuousfactor">Windows for ContinuousFactor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
 </ul>
 </li>
@@ -138,6 +146,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.RepeatMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.RepeatMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.AlignmentMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.AlignmentMode</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/factors.html">Factors and Levels</a><ul>
@@ -167,6 +177,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.ContinuousFactorWindow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactorWindow</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/constraints.html">Constraints</a><ul>
@@ -178,7 +189,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ContinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/sampling_strategies.html">Sampling Strategies</a><ul>
@@ -204,6 +215,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution.reset"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.reset()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -632,6 +644,164 @@ behavior is expected. The <a class="reference internal" href="../api/constraints
 constraint only looks <em>within</em> a given experiment, not across experiments.</p>
 </section>
 </section>
+<section id="working-with-multiple-crossings">
+<h2>Working With Multiple Crossings<a class="headerlink" href="#working-with-multiple-crossings" title="Link to this heading"></a></h2>
+<p>SweetPea supports multiple crossings for situations where different subsets
+of factors should be crossed independently. This is useful when building more
+complex experimental designs that consist of multiple fully-crossed components.</p>
+<section id="defining-multicrossblock">
+<h3>Defining MultiCrossBlock<a class="headerlink" href="#defining-multicrossblock" title="Link to this heading"></a></h3>
+<p>Using <a class="reference internal" href="../api/main.html#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a> could create an experiment description as a
+block of trials based on multiple crossings. This allows you to combine
+different subsets of factors into a unified experiment while maintaining
+independent full crossings within each subset.</p>
+<p>This is especially useful in complex experimental designs where some
+factors are fully crossed only within specific conditions.
+By passing a list of crossings to the crossing argument
+in <a class="reference internal" href="../api/main.html#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a>, each inner list defines a separate crossing.</p>
+</section>
+<section id="crossing-sizes-in-multicrossblock">
+<span id="working-with-multiple-crossings-example"></span><h3>Crossing Sizes in MultiCrossBlock<a class="headerlink" href="#crossing-sizes-in-multicrossblock" title="Link to this heading"></a></h3>
+<p>When using multiple crossings, SweetPea ensures that each sub-crossing
+is internally fully crossed. The number of trials required for the block,
+T, is decide by the crossing size of larger crossing. When a crossing’s size S
+is smaller than the number of trials T, then the crossing’s combinations
+are replicated using the smallest multiple N such that so that S * N &gt;= T.
+If S * N &gt; T, then only the first T generated combinations will be used.
+There are two possible strategies for replicating a crossing, and
+<cite>mode</cite> selects between them. <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.WEIGHT</span></code> weights
+combinations, so that up to N instances of a combination can
+appear anywhere in the T trials. <code class="xref py py-attr docutils literal notranslate"><span class="pre">RepeatMode.REPEAT</span></code> ensures that
+each of the S combinations appears once in the first S trials,
+then once again in the next S trials, and so on, up to N times.</p>
+<p>The difference of these two strategies for replication are shown in the following example:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">Factor</span><span class="p">,</span> <span class="n">MultiCrossBlock</span><span class="p">,</span> <span class="n">RepeatMode</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">,</span> <span class="n">CMSGen</span><span class="p">,</span> <span class="n">IterateGen</span><span class="p">,</span> <span class="n">RandomGen</span><span class="p">,</span> <span class="n">IterateSATGen</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span>   <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;f2&quot;</span><span class="p">,</span>   <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f3</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;f3&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">constraints</span><span class="o">=</span><span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">design</span> <span class="o">=</span> <span class="p">[</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">crossing</span> <span class="o">=</span> <span class="p">[[</span><span class="n">f1</span><span class="p">,</span> <span class="n">f3</span><span class="p">],</span> <span class="p">[</span><span class="n">f2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">constraints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">MultiCrossBlock</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">crossing</span><span class="p">,</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">RepeatMode</span><span class="o">.</span><span class="n">WEIGHT</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">RandomGen</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using RandomGen.</span>
+<span class="go">Counting possible configurations...</span>
+<span class="go">Generating samples...</span>
+
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">f1 C | f3 2 | f2 c</span>
+<span class="go">f1 D | f3 1 | f2 a</span>
+<span class="go">f1 D | f3 2 | f2 a</span>
+<span class="go">f1 B | f3 2 | f2 b</span>
+<span class="go">f1 A | f3 2 | f2 c</span>
+<span class="go">f1 A | f3 1 | f2 b</span>
+<span class="go">f1 C | f3 1 | f2 a</span>
+<span class="go">f1 B | f3 1 | f2 c</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">MultiCrossBlock</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">crossing</span><span class="p">,</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">RepeatMode</span><span class="o">.</span><span class="n">REPEAT</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">RandomGen</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using RandomGen.</span>
+<span class="go">Counting possible configurations...</span>
+<span class="go">Generating samples...</span>
+
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">f1 C | f3 1 | f2 b</span>
+<span class="go">f1 C | f3 2 | f2 c</span>
+<span class="go">f1 A | f3 2 | f2 a</span>
+<span class="go">f1 D | f3 2 | f2 a</span>
+<span class="go">f1 B | f3 2 | f2 b</span>
+<span class="go">f1 D | f3 1 | f2 c</span>
+<span class="go">f1 A | f3 1 | f2 a</span>
+<span class="go">f1 B | f3 1 | f2 b</span>
+</pre></div>
+</div>
+</section>
+<section id="preamble-trials-in-multicrossblock">
+<span id="preamble-trials-multiple-crossings-example"></span><h3>Preamble Trials in MultiCrossBlock<a class="headerlink" href="#preamble-trials-in-multicrossblock" title="Link to this heading"></a></h3>
+<p>In a <a class="reference internal" href="../api/main.html#sweetpea.CrossBlock" title="sweetpea.CrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossBlock</span></code></a>, if a derived factor in the crossing has a window size N &gt; 1,
+then N – 1 preamble trials are added to ensure its level is defined on the first trial.
+This can be adjusted using the factor’s starting trial.
+When multiple derived factors are present in the crossing,
+the one with the latest starting trial determines the number of preamble trials.</p>
+<p>When using <a class="reference internal" href="../api/main.html#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a>, if crossings require different
+numbers of preamble trials due to derived factors with varying window sizes,
+the <cite>alignment</cite> parameter controls how crossings are aligned.
+Use <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.POST_PREAMBLE</span></code> to start all crossings after the unified preamble
+trials, or <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.PARALLEL_START</span></code> to start individual crossing from
+its own required preamble trials.</p>
+<p>The difference of these two strategies are shown in the following example. If
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.PARALLEL_START</span></code> is used in the <a class="reference internal" href="../api/main.html#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a>,
+the crossing [color, task_transition] would have one preamble trial because of
+derived factor task_transition, whereas the crossing [task] and [word] would have
+no preamble trials since it does not require preamble trials. Thus the first trial
+<cite>color green | word red   | task word  | task_transition</cite> is considered preamble
+trial for the crossing [color, task_transition], but the first
+trial for the crossing [task] and the crossing [word].
+If <code class="xref py py-attr docutils literal notranslate"><span class="pre">AlignmentMode.POST_PREAMBLE</span></code> is used in the <a class="reference internal" href="../api/main.html#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a>,
+the first trial <cite>color red | word blue | task color | task_transition</cite> would be the
+preamble trial for all crossings:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">Factor</span><span class="p">,</span> <span class="n">MultiCrossBlock</span><span class="p">,</span> <span class="n">RepeatMode</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">,</span> <span class="n">CMSGen</span><span class="p">,</span> <span class="n">IterateGen</span><span class="p">,</span> <span class="n">RandomGen</span><span class="p">,</span> <span class="n">IterateSATGen</span><span class="p">,</span> <span class="n">Repeat</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">DerivedLevel</span><span class="p">,</span> <span class="n">Transition</span><span class="p">,</span> <span class="n">MinimumTrials</span><span class="p">,</span> <span class="n">Window</span><span class="p">,</span> <span class="n">AlignmentMode</span><span class="p">,</span> <span class="n">CrossBlock</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">color</span>   <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span>   <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span>   <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">,</span>   <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">task</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;task&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;word&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">task_repeat</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+<span class="go">        return task[0] == task[-1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">task_switch</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+<span class="go">        return not task_repeat(task)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">task_transition</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;task_transition&quot;</span><span class="p">,</span> <span class="p">[</span>
+<span class="go">        DerivedLevel(&quot;repeat&quot;, Transition(task_repeat, [task])),</span>
+<span class="go">        DerivedLevel(&quot;switch&quot;, Transition(task_switch, [task]))</span>
+<span class="go">    ])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">design</span> <span class="o">=</span> <span class="p">[</span><span class="n">color</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">task_transition</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">crossing</span> <span class="o">=</span> <span class="p">[[</span><span class="n">color</span><span class="p">,</span> <span class="n">task_transition</span><span class="p">],</span> <span class="p">[</span><span class="n">task</span><span class="p">],</span> <span class="p">[</span><span class="n">word</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">constraints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">MultiCrossBlock</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">crossing</span><span class="p">,</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">RepeatMode</span><span class="o">.</span><span class="n">REPEAT</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="n">AlignmentMode</span><span class="o">.</span><span class="n">PARALLEL_START</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">CMSGen</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using CMSGen.</span>
+<span class="go">Encoding experiment constraints...</span>
+<span class="go">Running CMSGen...</span>
+
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">color green | word red   | task word  | task_transition</span>
+<span class="go">color red   | word blue  | task color | task_transition switch</span>
+<span class="go">color green | word green | task color | task_transition repeat</span>
+<span class="go">color green | word green | task word  | task_transition switch</span>
+<span class="go">color red   | word red   | task word  | task_transition repeat</span>
+<span class="go">color blue  | word blue  | task color | task_transition switch</span>
+<span class="go">color blue  | word blue  | task color | task_transition repeat</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">MultiCrossBlock</span><span class="p">(</span><span class="n">design</span><span class="p">,</span> <span class="n">crossing</span><span class="p">,</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">RepeatMode</span><span class="o">.</span><span class="n">REPEAT</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="n">AlignmentMode</span><span class="o">.</span><span class="n">POST_PREAMBLE</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">CMSGen</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using CMSGen.</span>
+<span class="go">Encoding experiment constraints...</span>
+<span class="go">Running CMSGen...</span>
+
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">color red   | word blue  | task color | task_transition</span>
+<span class="go">color green | word red   | task color | task_transition repeat</span>
+<span class="go">color blue  | word blue  | task word  | task_transition switch</span>
+<span class="go">color red   | word green | task word  | task_transition repeat</span>
+<span class="go">color red   | word blue  | task color | task_transition switch</span>
+<span class="go">color blue  | word green | task color | task_transition repeat</span>
+<span class="go">color green | word red   | task word  | task_transition switch</span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="continuousfactor-in-sweetpea">
 <h2>ContinuousFactor in SweetPea<a class="headerlink" href="#continuousfactor-in-sweetpea" title="Link to this heading"></a></h2>
 <p>In addition to factors with discrete levels, SweetPea also supports a
@@ -672,15 +842,54 @@ instead of the crossing. The crossing needs to consist of factor(s) with finite 
 </pre></div>
 </div>
 </section>
+<section id="windows-for-continuousfactor">
+<span id="window-for-continuous-factor-example"></span><h3>Windows for ContinuousFactor<a class="headerlink" href="#windows-for-continuousfactor" title="Link to this heading"></a></h3>
+<p>Just like derivations on discrete levels can look at previous trials using windows,
+SweetPea also supports defining derived continuous factors using windows over past values.</p>
+<p>To do this, use the <a class="reference internal" href="../api/derivations.html#sweetpea.ContinuousFactorWindow" title="sweetpea.ContinuousFactorWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactorWindow</span></code></a> along with a <a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution" title="sweetpea.CustomDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomDistribution</span></code></a>
+that takes windowed input.</p>
+<p>Here’s a minimal example that demonstrates how to define a derived <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> using
+a <a class="reference internal" href="../api/derivations.html#sweetpea.ContinuousFactorWindow" title="sweetpea.ContinuousFactorWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactorWindow</span></code></a> over another <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>.
+Specifically, it creates a <cite>reward_diff</cite> factor that calculates the difference between
+the current and previous reward values of <cite>reward</cite>:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">ContinuousFactor</span><span class="p">,</span> <span class="n">ContinuousFactorWindow</span><span class="p">,</span> <span class="n">CustomDistribution</span><span class="p">,</span> <span class="n">Factor</span><span class="p">,</span> \
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span> <span class="n">MinimumTrials</span><span class="p">,</span> <span class="n">print_experiments</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">sample_continuous</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reward</span> <span class="o">=</span> <span class="n">ContinuousFactor</span><span class="p">(</span><span class="s2">&quot;reward&quot;</span><span class="p">,</span> <span class="n">distribution</span><span class="o">=</span><span class="n">CustomDistribution</span><span class="p">(</span><span class="n">sample_continuous</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">difference</span><span class="p">(</span><span class="n">window</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">window</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">window</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">window</span> <span class="o">=</span> <span class="n">ContinuousFactorWindow</span><span class="p">([</span><span class="n">reward</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reward_diff</span> <span class="o">=</span> <span class="n">ContinuousFactor</span><span class="p">(</span><span class="s2">&quot;reward_diff&quot;</span><span class="p">,</span> <span class="n">distribution</span><span class="o">=</span><span class="n">CustomDistribution</span><span class="p">(</span><span class="n">difference</span><span class="p">,</span> <span class="p">[</span><span class="n">window</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">color</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">([</span><span class="n">color</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">reward_diff</span><span class="p">],</span> <span class="p">[</span><span class="n">color</span><span class="p">],</span> <span class="p">[</span><span class="n">MinimumTrials</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using NonUniformGen.</span>
+<span class="go">Encoding experiment constraints...</span>
+<span class="go">Running CryptoMiniSat...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">experiments</span><span class="p">)</span>
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">color blue | reward 0.9148493567759514  | reward_diff nan</span>
+<span class="go">color blue | reward 0.5751320373836653  | reward_diff -0.3397173193922861</span>
+<span class="go">color red  | reward 0.22538414657155603 | reward_diff -0.3497478908121092</span>
+<span class="go">color red  | reward 0.34749367375749685 | reward_diff 0.12210952718594081</span>
+<span class="go">color red  | reward 0.7889544775824884  | reward_diff 0.44146080382499153</span>
+<span class="go">color blue | reward 0.8445088438260279  | reward_diff 0.05555436624353949</span>
+</pre></div>
+</div>
+</section>
 <section id="constraints-for-design-with-continuousfactors">
 <h3>Constraints for Design with ContinuousFactors<a class="headerlink" href="#constraints-for-design-with-continuousfactors" title="Link to this heading"></a></h3>
 <p>When designing an experiment using <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>, you can
 also impose some constraints on the factor.</p>
 <p>Let’s say we look at the above list of trials and decide “we should ensure
 that the <code class="docutils literal notranslate"><span class="pre">response_time</span></code> should be less than 1.”</p>
-<p>In that case, we can add <a class="reference internal" href="../api/constraints.html#sweetpea.ConstinuousConstraint" title="sweetpea.ConstinuousConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConstinuousConstraint</span></code></a> to achieve that.</p>
+<p>In that case, we can add <a class="reference internal" href="../api/constraints.html#sweetpea.ContinuousConstraint" title="sweetpea.ContinuousConstraint"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousConstraint</span></code></a> to achieve that.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">CrossBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span>\
-<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">,</span> <span class="n">ConstinuousConstraint</span><span class="p">,</span> <span class="n">ContinuousFactor</span><span class="p">,</span> <span class="n">CustomDistribution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">,</span> <span class="n">ContinuousConstraint</span><span class="p">,</span> <span class="n">ContinuousFactor</span><span class="p">,</span> <span class="n">CustomDistribution</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">sample_continuous</span><span class="p">():</span>
 <span class="gp">&gt;&gt;&gt; </span>  <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
@@ -689,7 +898,7 @@ that the <code class="docutils literal notranslate"><span class="pre">response_t
 <span class="gp">&gt;&gt;&gt; </span><span class="n">factor_for_crossing</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">less_than_one</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
 <span class="gp">&gt;&gt;&gt; </span>  <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cc</span> <span class="o">=</span> <span class="n">ConstinuousConstraint</span><span class="p">([</span><span class="n">response_time</span><span class="p">],</span> <span class="n">less_than_one</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cc</span> <span class="o">=</span> <span class="n">ContinuousConstraint</span><span class="p">([</span><span class="n">response_time</span><span class="p">],</span> <span class="n">less_than_one</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">([</span><span class="n">factor_for_crossing</span><span class="p">,</span> <span class="n">response_time</span><span class="p">],</span> <span class="p">[</span><span class="n">factor_for_crossing</span><span class="p">],</span> <span class="p">[</span><span class="n">cc</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">experiments</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="go">Sampling 1 trial sequences using NonUniformGen.</span>

@@ -66,6 +66,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#within-trial-windows">Within-Trial Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#transition-windows">Transition Windows</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#general-windows">General Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#continuousfactor-windows">ContinuousFactor Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#glossary">Glossary</a></li>
@@ -82,8 +83,15 @@
 <li class="toctree-l4"><a class="reference internal" href="usage.html#constraints">Constraints</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#working-with-multiple-crossings">Working With Multiple Crossings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#defining-multicrossblock">Defining MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#crossing-sizes-in-multicrossblock">Crossing Sizes in MultiCrossBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#preamble-trials-in-multicrossblock">Preamble Trials in MultiCrossBlock</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="usage.html#continuousfactor-in-sweetpea">ContinuousFactor in SweetPea</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="usage.html#defining-continuousfactor">Defining ContinuousFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#windows-for-continuousfactor">Windows for ContinuousFactor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
 </ul>
 </li>
@@ -138,6 +146,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.save_experiments_csv"><code class="docutils literal notranslate"><span class="pre">sweetpea.save_experiments_csv()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.experiments_to_dicts"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_dicts()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.experiments_to_tuples"><code class="docutils literal notranslate"><span class="pre">sweetpea.experiments_to_tuples()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.RepeatMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.RepeatMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.AlignmentMode"><code class="docutils literal notranslate"><span class="pre">sweetpea.AlignmentMode</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/factors.html">Factors and Levels</a><ul>
@@ -154,7 +164,11 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.DerivedLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.DerivedLevel</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.ElseLevel"><code class="docutils literal notranslate"><span class="pre">sweetpea.ElseLevel</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor.name"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor.generate"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactor.generate()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../api/factors.html#sweetpea.DiscreteFactor"><code class="docutils literal notranslate"><span class="pre">sweetpea.DiscreteFactor</span></code></a></li>
 </ul>
 </li>
@@ -163,6 +177,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.WithinTrial"><code class="docutils literal notranslate"><span class="pre">sweetpea.WithinTrial</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.Transition"><code class="docutils literal notranslate"><span class="pre">sweetpea.Transition</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.Window"><code class="docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/derivations.html#sweetpea.ContinuousFactorWindow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactorWindow</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/constraints.html">Constraints</a><ul>
@@ -174,7 +189,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.AtLeastKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.AtLeastKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ExactlyKInARow"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyKInARow</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ExactlyK"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExactlyK</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ConstinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ConstinuousConstraint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/constraints.html#sweetpea.ContinuousConstraint"><code class="docutils literal notranslate"><span class="pre">sweetpea.ContinuousConstraint</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/sampling_strategies.html">Sampling Strategies</a><ul>
@@ -190,12 +205,19 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/distributions.html">Distributions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.Distribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/distributions.html#sweetpea.Distribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.Distribution.sample()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.UniformDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.UniformDistribution</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.GaussianDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.GaussianDistribution</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.ExponentialDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.ExponentialDistribution</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.LogNormalDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.LogNormalDistribution</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution.sample"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.sample()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/distributions.html#sweetpea.CustomDistribution.reset"><code class="docutils literal notranslate"><span class="pre">sweetpea.CustomDistribution.reset()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -309,6 +331,10 @@ look at a trial and the previous one, so it can describe transitions between
 two consecutive trials.</p></li>
 <li><p><a class="reference internal" href="#guide-factorial-derivations-basic-windows"><span class="std std-ref">General windows</span></a> are defined
 in terms of a trial and any number of preceding trials.</p></li>
+<li><p><a class="reference internal" href="#guide-factorial-derivations-continuous-factor-windows"><span class="std std-ref">ContinuousFactor windows</span></a>
+offer similar functionality to general derivation windows,
+but operate on values of <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> across a trial
+and any number of preceding trials, rather than on discrete levels.</p></li>
 </ul>
 <p>These are explained more below.</p>
 <section id="within-trial-windows">
@@ -334,6 +360,17 @@ and the previous trial was also categorized as “congurent”.</p>
 (<a class="reference internal" href="../api/derivations.html#sweetpea.Window" title="sweetpea.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">sweetpea.Window</span></code></a>) creates a level that is selected
 depending on a combination of levels from other factors in the current trial and
 zero or more preceding trials.</p>
+</section>
+<section id="continuousfactor-windows">
+<span id="guide-factorial-derivations-continuous-factor-windows"></span><h3>ContinuousFactor Windows<a class="headerlink" href="#continuousfactor-windows" title="Link to this heading"></a></h3>
+<p>A <a class="reference internal" href="#term-derivation-window-continuous-factor"><span class="xref std std-term">continuous factor window</span></a>
+(<a class="reference internal" href="../api/derivations.html#sweetpea.ContinuousFactorWindow" title="sweetpea.ContinuousFactorWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">sweetpea.ContinuousFactorWindow</span></code></a>) is special kind of general window
+that operates on <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a> instead of discrete levels.
+It allows access to values of one or more <a class="reference internal" href="../api/factors.html#sweetpea.ContinuousFactor" title="sweetpea.ContinuousFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousFactor</span></code></a>
+across a number of previous trials defined by window <cite>width</cite>.
+This is useful for defining new continuous factors that depend on recent trends,
+changes, or history — for example, computing the difference between the current
+and previous trial values of reward.</p>
 </section>
 </section>
 <section id="glossary">
@@ -361,6 +398,11 @@ immediately preceding trial.</p>
 <dt id="term-derivation-window-within-trial">derivation window, within-trial<a class="headerlink" href="#term-derivation-window-within-trial" title="Link to this term"></a></dt><dd><p>A <a class="reference internal" href="#term-derivation-window"><span class="xref std std-term">derivation window</span></a> that depends on <a class="reference internal" href="#term-level"><span class="xref std std-term">levels</span></a> from
 other <a class="reference internal" href="#term-factor"><span class="xref std std-term">factors</span></a>, all within the same trial.</p>
 </dd>
+<dt id="term-derivation-window-continuous-factor">derivation window, continuous factor<a class="headerlink" href="#term-derivation-window-continuous-factor" title="Link to this term"></a></dt><dd><p>A <a class="reference internal" href="#term-continuous-factor-window"><span class="xref std std-term">continuous factor window</span></a> that operates over continuous-valued
+<a class="reference internal" href="#term-continuous-factor"><span class="xref std std-term">continuous factors</span></a> rather than discrete levels.
+It provides runtime access to a
+sliding window of numeric values across multiple trials.</p>
+</dd>
 <dt id="term-derived-level">derived level<a class="headerlink" href="#term-derived-level" title="Link to this term"></a></dt><dd><p>See <a class="reference internal" href="#term-derivation"><span class="xref std std-term">derivation</span></a>.</p>
 </dd>
 <dt id="term-design">design<a class="headerlink" href="#term-design" title="Link to this term"></a></dt><dd><p>Short for <a class="reference internal" href="#term-experiment-design"><span class="xref std std-term">experiment design</span></a>.</p>
@@ -383,6 +425,9 @@ and that determine the <a class="reference internal" href="#term-trial"><span cl
 </dd>
 <dt id="term-factor">factor<a class="headerlink" href="#term-factor" title="Link to this term"></a></dt><dd><p>An independent variable in a factorial experiment, composed of finitely
 many <a class="reference internal" href="#term-level"><span class="xref std std-term">levels</span></a>.</p>
+</dd>
+<dt id="term-continuous-factor">continuous factor<a class="headerlink" href="#term-continuous-factor" title="Link to this term"></a></dt><dd><p>A factor whose values are sampled from a distribution function at runtime,
+rather than chosen from a predefined list of discrete levels.</p>
 </dd>
 <dt id="term-factorial-experiment">factorial experiment<a class="headerlink" href="#term-factorial-experiment" title="Link to this term"></a></dt><dd><p>An experimental design measuring multiple independent variables (called
 <a class="reference internal" href="#term-factor"><span class="xref std std-term">factors</span></a>) consisting of finitely many discrete possible
@@ -418,6 +463,8 @@ and the way that they are crossed.</p>
 <dt id="term-window">window<a class="headerlink" href="#term-window" title="Link to this term"></a></dt><dd><p>See <a class="reference internal" href="#term-derivation-window"><span class="xref std std-term">derivation window</span></a>.</p>
 </dd>
 <dt id="term-within-trial-derivation">within-trial derivation<a class="headerlink" href="#term-within-trial-derivation" title="Link to this term"></a></dt><dd><p>See <a class="reference internal" href="#term-derivation-window-within-trial"><span class="xref std std-term">derivation window, within-trial</span></a>.</p>
+</dd>
+<dt id="term-continuous-factor-window">continuous factor window<a class="headerlink" href="#term-continuous-factor-window" title="Link to this term"></a></dt><dd><p>See <a class="reference internal" href="#term-derivation-window-continuous-factor"><span class="xref std std-term">derivation window, continuous factor</span></a>.</p>
 </dd>
 </dl>
 </section>
