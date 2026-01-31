@@ -95,6 +95,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#nesting-designs-with-nestedblock">Nesting Designs with NestedBlock</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-nestedblock">Using NestedBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vary-the-inner-block-between-windows">Vary the inner block between windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nesting-inside-nesting">Nesting inside nesting</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html">Contributing to SweetPea</a><ul>
@@ -140,6 +146,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.NestedBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.NestedBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/main.html#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
@@ -912,6 +919,134 @@ that the <code class="docutils literal notranslate"><span class="pre">response_t
 <span class="go">color blue  | response_time 0.5357413769177958</span>
 <span class="go">color red   | response_time 0.9859899610573284</span>
 <span class="go">color green | response_time 0.5929666932777036</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nesting-designs-with-nestedblock">
+<h2>Nesting Designs with NestedBlock<a class="headerlink" href="#nesting-designs-with-nestedblock" title="Link to this heading"></a></h2>
+<p>Sweetpea also supports the experiment where a small design runs
+multiple times while holding one or more external factors constant
+for each repeat (for example, run a 2×2 task
+inside each session or day) with <a class="reference internal" href="../api/main.html#sweetpea.NestedBlock" title="sweetpea.NestedBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NestedBlock</span></code></a>.
+<a class="reference internal" href="../api/main.html#sweetpea.NestedBlock" title="sweetpea.NestedBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NestedBlock</span></code></a> treats one <cite>inner block</cite> as a window and
+repeats that window across the levels of your <cite>external factors</cite>.</p>
+<p>If you already have a <a class="reference internal" href="../api/main.html#sweetpea.CrossBlock" title="sweetpea.CrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossBlock</span></code></a> or <a class="reference internal" href="../api/main.html#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiCrossBlock</span></code></a>
+that you like, <a class="reference internal" href="../api/main.html#sweetpea.NestedBlock" title="sweetpea.NestedBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NestedBlock</span></code></a> lets you reuse it as a unit.</p>
+<section id="using-nestedblock">
+<span id="nestedblock-example"></span><h3>Using NestedBlock<a class="headerlink" href="#using-nestedblock" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="../api/main.html#sweetpea.NestedBlock" title="sweetpea.NestedBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NestedBlock</span></code></a> can keep an external factor (e.g., task, session, etc.)
+constant within each window of the <cite>inner block</cite>.
+The <cite>inner block</cite> can repeat once per external combination OR
+vary between windows for counterbalancing.</p>
+<p>Let’s start with a 2×2 inner design:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">Factor</span><span class="p">,</span> <span class="n">CrossBlock</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;a1&quot;</span><span class="p">,</span> <span class="s2">&quot;a2&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;b1&quot;</span><span class="p">,</span> <span class="s2">&quot;b2&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inner</span> <span class="o">=</span> <span class="n">CrossBlock</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inner</span><span class="o">.</span><span class="n">trials_per_sample</span><span class="p">()</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>Here we repeat the 2×2 inner block for each level of an external
+<a class="reference internal" href="../api/factors.html#sweetpea.Factor" title="sweetpea.Factor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factor</span></code></a> session. Inside each 4-trial window, session is constant.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sweetpea</span><span class="w"> </span><span class="kn">import</span> <span class="n">NestedBlock</span><span class="p">,</span> <span class="n">synthesize_trials</span><span class="p">,</span> <span class="n">print_experiments</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;s1&quot;</span><span class="p">,</span> <span class="s2">&quot;s2&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Every Factor in `design` must also be in `crossing`.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb</span> <span class="o">=</span> <span class="n">NestedBlock</span><span class="p">(</span><span class="n">design</span><span class="o">=</span><span class="p">[</span><span class="n">session</span><span class="p">,</span> <span class="n">inner</span><span class="p">],</span> <span class="n">crossing</span><span class="o">=</span><span class="p">[</span><span class="n">session</span><span class="p">],</span> <span class="n">constraints</span><span class="o">=</span><span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb</span><span class="o">.</span><span class="n">trials_per_sample</span><span class="p">()</span>
+<span class="go">8 # Total trials = #session levels × inner trials = 2 × 4 = 8.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exps</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using NonUniformGen.</span>
+<span class="go">Encoding experiment constraints...</span>
+<span class="go">Running CryptoMiniSat...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="n">exps</span><span class="p">)</span>
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">session s2 | A a2 | B b2</span>
+<span class="go">session s2 | A a2 | B b1</span>
+<span class="go">session s2 | A a1 | B b1</span>
+<span class="go">session s2 | A a1 | B b2</span>
+<span class="go">session s1 | A a2 | B b1</span>
+<span class="go">session s1 | A a1 | B b2</span>
+<span class="go">session s1 | A a2 | B b2</span>
+<span class="go">session s1 | A a1 | B b1</span>
+</pre></div>
+</div>
+</section>
+<section id="vary-the-inner-block-between-windows">
+<h3>Vary the inner block between windows<a class="headerlink" href="#vary-the-inner-block-between-windows" title="Link to this heading"></a></h3>
+<p>If the inner block is included  in the crossing,
+SweetPea introduces a hidden “order” factor and
+balances windows over different orders of the inner
+crossing.
+You can also choose how many orders to use with <cite>num_permutations</cite>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;G1&quot;</span><span class="p">,</span> <span class="s2">&quot;G2&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb_perm</span> <span class="o">=</span> <span class="n">NestedBlock</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">design</span><span class="o">=</span><span class="p">[</span><span class="n">group</span><span class="p">,</span> <span class="n">inner</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">crossing</span><span class="o">=</span><span class="p">[</span><span class="n">inner</span><span class="p">,</span> <span class="n">group</span><span class="p">],</span>        <span class="c1"># include the inner block here to vary order</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">constraints</span><span class="o">=</span><span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb_perm</span><span class="o">.</span><span class="n">trials_per_sample</span><span class="p">()</span>
+<span class="go">192 # 192 = 2×4×4!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb_perm</span> <span class="o">=</span> <span class="n">NestedBlock</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">design</span><span class="o">=</span><span class="p">[</span><span class="n">group</span><span class="p">,</span> <span class="n">inner</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">crossing</span><span class="o">=</span><span class="p">[</span><span class="n">inner</span><span class="p">,</span> <span class="n">group</span><span class="p">],</span>        <span class="c1"># include the inner block here to vary order</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">constraints</span><span class="o">=</span><span class="p">[],</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">num_permutations</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb_perm</span><span class="o">.</span><span class="n">trials_per_sample</span><span class="p">()</span>
+<span class="go">16 # 16 = 2×4×2</span>
+</pre></div>
+</div>
+</section>
+<section id="nesting-inside-nesting">
+<h3>Nesting inside nesting<a class="headerlink" href="#nesting-inside-nesting" title="Link to this heading"></a></h3>
+<p>You can create a <a class="reference internal" href="../api/main.html#sweetpea.NestedBlock" title="sweetpea.NestedBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NestedBlock</span></code></a> using another <a class="reference internal" href="../api/main.html#sweetpea.NestedBlock" title="sweetpea.NestedBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NestedBlock</span></code></a>
+as the <cite>inner block</cite>. Each outer level repeats the entire
+<cite>inner block</cite>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;s1&quot;</span><span class="p">,</span> <span class="s2">&quot;s2&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mid</span> <span class="o">=</span> <span class="n">NestedBlock</span><span class="p">(</span><span class="n">design</span><span class="o">=</span><span class="p">[</span><span class="n">session</span><span class="p">,</span> <span class="n">inner</span><span class="p">],</span> <span class="n">crossing</span><span class="o">=</span><span class="p">[</span><span class="n">session</span><span class="p">],</span> <span class="n">constraints</span><span class="o">=</span><span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exps</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using NonUniformGen.</span>
+<span class="go">Encoding experiment constraints...</span>
+<span class="go">Running CryptoMiniSat...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">exps</span><span class="p">)</span>
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">Experiment 0:</span>
+<span class="go">session s2 | A a2 | B b2</span>
+<span class="go">session s2 | A a2 | B b1</span>
+<span class="go">session s2 | A a1 | B b1</span>
+<span class="go">session s2 | A a1 | B b2</span>
+<span class="go">session s1 | A a2 | B b1</span>
+<span class="go">session s1 | A a1 | B b2</span>
+<span class="go">session s1 | A a2 | B b2</span>
+<span class="go">session s1 | A a1 | B b1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">day</span> <span class="o">=</span> <span class="n">Factor</span><span class="p">(</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span> <span class="s2">&quot;d2&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">outer</span> <span class="o">=</span> <span class="n">NestedBlock</span><span class="p">(</span><span class="n">design</span><span class="o">=</span><span class="p">[</span><span class="n">day</span><span class="p">,</span> <span class="n">mid</span><span class="p">],</span> <span class="n">crossing</span><span class="o">=</span><span class="p">[</span><span class="n">day</span><span class="p">],</span> <span class="n">constraints</span><span class="o">=</span><span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exps</span> <span class="o">=</span> <span class="n">synthesize_trials</span><span class="p">(</span><span class="n">outer</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">Sampling 1 trial sequences using NonUniformGen.</span>
+<span class="go">Encoding experiment constraints...</span>
+<span class="go">Running CryptoMiniSat...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_experiments</span><span class="p">(</span><span class="n">outer</span><span class="p">,</span> <span class="n">exps</span><span class="p">)</span>
+<span class="go">1 trial sequences found.</span>
+
+<span class="go">day d2 | session s2 | A a2 | B b2</span>
+<span class="go">day d2 | session s2 | A a2 | B b1</span>
+<span class="go">day d2 | session s2 | A a1 | B b2</span>
+<span class="go">day d2 | session s2 | A a1 | B b1</span>
+<span class="go">day d2 | session s1 | A a2 | B b1</span>
+<span class="go">day d2 | session s1 | A a1 | B b1</span>
+<span class="go">day d2 | session s1 | A a2 | B b2</span>
+<span class="go">day d2 | session s1 | A a1 | B b2</span>
+<span class="go">day d1 | session s1 | A a2 | B b1</span>
+<span class="go">day d1 | session s1 | A a1 | B b2</span>
+<span class="go">day d1 | session s1 | A a2 | B b2</span>
+<span class="go">day d1 | session s1 | A a1 | B b1</span>
+<span class="go">day d1 | session s2 | A a2 | B b2</span>
+<span class="go">day d1 | session s2 | A a1 | B b1</span>
+<span class="go">day d1 | session s2 | A a2 | B b1</span>
+<span class="go">day d1 | session s2 | A a1 | B b2</span>
 </pre></div>
 </div>
 </section>

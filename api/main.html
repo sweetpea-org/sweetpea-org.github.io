@@ -94,6 +94,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../guide/usage.html#nesting-designs-with-nestedblock">Nesting Designs with NestedBlock</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#using-nestedblock">Using NestedBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#vary-the-inner-block-between-windows">Vary the inner block between windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guide/usage.html#nesting-inside-nesting">Nesting inside nesting</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/contributing.html">Contributing to SweetPea</a><ul>
@@ -139,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sweetpea.NestedBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.NestedBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
@@ -464,6 +471,75 @@ generating them from <cite>block</cite> directly.</p>
 <li><p><strong>block</strong> (<a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><em>MultiCrossBlock</em></a>) – the block to repeat</p></li>
 <li><p><strong>constraints</strong> (<em>List</em><em>[</em><a class="reference internal" href="constraints.html#sweetpea.Constraint" title="sweetpea.Constraint"><em>Constraint</em></a><em>]</em>) – a list that cannot include
 <a class="reference internal" href="constraints.html#sweetpea.Exclude" title="sweetpea.Exclude"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exclude</span></code></a> constraints</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a block description</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#sweetpea.Block" title="sweetpea.Block">Block</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sweetpea.NestedBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sweetpea.</span></span><span class="sig-name descname"><span class="pre">NestedBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">design</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_permutations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sweetpea.NestedBlock" title="Link to this definition"></a></dt>
+<dd><p>Creates an experiment description that repeats an <cite>inner block</cite>
+as consecutive windows while holding selected <cite>external factors</cite>
+constant within each window.</p>
+<p>The <a class="reference internal" href="#sweetpea.NestedBlock" title="sweetpea.NestedBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NestedBlock</span></code></a> class combines exactly one <cite>inner block</cite> (a
+<a class="reference internal" href="#sweetpea.CrossBlock" title="sweetpea.CrossBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">CrossBlock</span></code></a>) with one or more external factors.
+When a sequence of trials is generated, each window consists of a
+complete run of the <cite>inner block</cite>;
+<cite>external factors</cite> in the design remain constant
+throughout that window and may change only between windows.</p>
+<p>The <cite>design</cite> argument lists the <cite>inner block</cite> used to form windows
+and the <cite>external factors</cite>. The <cite>crossing</cite> argument could list any
+<cite>external factors</cite> from design, including the <cite>inner block</cite>:</p>
+<p>If <cite>crossing</cite> only contains the <cite>external factors</cite>, each window reuses
+the <cite>inner block</cite> exactly as defined, and windows are balanced
+across the <cite>external factor</cite> combinations.</p>
+<p>If <cite>crossing</cite> also lists the <cite>inner block</cite>, the order of the <cite>inner block</cite>’s
+trial combinations is allowed to vary between windows. In that case,
+<cite>num_permutations</cite> can be used to limit how many distinct permutations
+appear.</p>
+<p>When in this permuted mode, the actual set of chosen permutations is
+refreshed for each synthesized experiment. That means each call to
+<a class="reference internal" href="#sweetpea.synthesize_trials" title="sweetpea.synthesize_trials"><code class="xref py py-func docutils literal notranslate"><span class="pre">synthesize_trials()</span></code></a> will  use different permutations,
+rather than reusing the same ones across experiments.</p>
+<p>Constraints and derivations defined on the <cite>inner block</cite> are reused
+inside every window. Constraints supplied in constraints apply at
+the outer level (across windows).
+The number of trials in each generated sequence is determined by
+the size of one <cite>inner block</cite> run (including any preamble implied
+by the derived factors) multiplied by the number of windows,
+which is the product of the counterbalancing <cite>external factors</cite>.</p>
+<p>If the <cite>inner block</cite> is included in crossing, the number of trials is
+multiplied by <cite>num_permutations</cite> or the full number of distinct
+permutations when <cite>num_permutations</cite> is not specified.</p>
+<p><cite>Design</cite> must contain exactly one inner block and at least one <cite>external factor</cite>.</p>
+<p>Every <cite>external factor</cite> listed in <cite>design</cite> must also be listed in
+the <cite>crossing</cite>. The <cite>inner block</cite> itself does not have to be included
+in <cite>crossing</cite>, unless you want different permutations between windows.
+An example illustrating the the usage of <a class="reference internal" href="#sweetpea.NestedBlock" title="sweetpea.NestedBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">NestedBlock</span></code></a> is shown in
+<a class="reference internal" href="../guide/usage.html#nestedblock-example"><span class="std std-ref">Using NestedBlockk</span></a> section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>design</strong> (<em>List</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><em>MultiCrossBlock</em></a><em>]</em><em>]</em>) – one <cite>inner block</cite> plus the <cite>external factors</cite></p></li>
+<li><p><strong>crossing</strong> (<em>List</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="factors.html#sweetpea.Factor" title="sweetpea.Factor"><em>Factor</em></a><em>, </em><a class="reference internal" href="#sweetpea.MultiCrossBlock" title="sweetpea.MultiCrossBlock"><em>MultiCrossBlock</em></a><em>]</em><em>]</em>) – all <cite>external factors</cite> from <cite>design</cite>;
+optionally include the <cite>inner block</cite>
+to allow different <cite>inner block</cite> orders per window</p></li>
+<li><p><strong>constraints</strong> (<em>List</em><em>[</em><a class="reference internal" href="constraints.html#sweetpea.Constraint" title="sweetpea.Constraint"><em>Constraint</em></a><em>]</em>) – outer-level constraints;
+<cite>inner block</cite> constraints are inherited automatically</p></li>
+<li><p><strong>num_permutations</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>]</em>) – when the inner block is included in crossing,
+<cite>num_permutations</cite> decides the number of distinct
+<cite>inner block</cite> orders across windows. When it is not
+specified, the full permutation will be used.
+The chosen set of permutations is refreshed on every
+synthesized experiment, so repeated calls can yield
+different orderings.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>

@@ -91,6 +91,12 @@
 <li class="toctree-l4"><a class="reference internal" href="guide/usage.html#constraints-for-design-with-continuousfactors">Constraints for Design with ContinuousFactors</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="guide/usage.html#nesting-designs-with-nestedblock">Nesting Designs with NestedBlock</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#using-nestedblock">Using NestedBlock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#vary-the-inner-block-between-windows">Vary the inner block between windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="guide/usage.html#nesting-inside-nesting">Nesting inside nesting</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="guide/contributing.html">Contributing to SweetPea</a><ul>
@@ -136,6 +142,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.CrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.CrossBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.MultiCrossBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.MultiCrossBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.Repeat"><code class="docutils literal notranslate"><span class="pre">sweetpea.Repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.NestedBlock"><code class="docutils literal notranslate"><span class="pre">sweetpea.NestedBlock</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.synthesize_trials"><code class="docutils literal notranslate"><span class="pre">sweetpea.synthesize_trials()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.print_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.print_experiments()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/main.html#sweetpea.tabulate_experiments"><code class="docutils literal notranslate"><span class="pre">sweetpea.tabulate_experiments()</span></code></a></li>
@@ -478,10 +485,10 @@
 </li>
       <li><a href="api/factors.html#sweetpea.Factor">sweetpea.Factor (built-in class)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/distributions.html#sweetpea.GaussianDistribution">sweetpea.GaussianDistribution (built-in class)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sampling_strategies.html#sweetpea.Gen">sweetpea.Gen (built-in class)</a>
 </li>
       <li><a href="api/sampling_strategies.html#sweetpea.IterateGen">sweetpea.IterateGen (built-in class)</a>
@@ -497,6 +504,8 @@
       <li><a href="api/constraints.html#sweetpea.MinimumTrials">sweetpea.MinimumTrials (built-in class)</a>
 </li>
       <li><a href="api/main.html#sweetpea.MultiCrossBlock">sweetpea.MultiCrossBlock (built-in class)</a>
+</li>
+      <li><a href="api/main.html#sweetpea.NestedBlock">sweetpea.NestedBlock (built-in class)</a>
 </li>
       <li><a href="api/constraints.html#sweetpea.Pin">sweetpea.Pin (built-in class)</a>
 </li>
